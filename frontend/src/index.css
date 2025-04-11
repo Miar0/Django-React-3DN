@@ -15,10 +15,6 @@
         background: linear-gradient(90deg, #1235C7, #0E2897, #0C227F, #0C2488, #091A61);
     }
 
-    .login-btn {
-        background: linear-gradient(90deg, #EBE8E8, #CAD2DA);
-    }
-
     /* SHADOW   */
     /*.login-shadow {*/
     /*    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1),*/

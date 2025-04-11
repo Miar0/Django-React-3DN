@@ -1,5 +1,5 @@
 import React from 'react'
-import pets from '../assets/icons/pets.svg'
+import pets from '../assets/images/pets.png'
 import greenEllipse from '../assets/icons/green-ellipse.svg'
 import blueEllipse from '../assets/icons/blue-ellipse.svg'
 

@@ -42,10 +42,9 @@ const Header = () => {
                 {/* Auth Buttons */}
                 <div className="flex gap-3">
                     <button
-                        className="h-[34px] w-[87px] text-[18px] font-bold text-[#1235C7] rounded-lg login-btn border border-[#1235C7]
-                        shadow-[2px_2px_7px_rgba(0,0,0,0.1),8px_9px_12px_rgba(0,0,0,0.09),19px_20px_16px_rgba(0,0,0,0.05),34px_35px_20px_rgba(0,0,0,0.01),53px_55px_21px_rgba(0,0,0,0)]
-                        cursor-pointer"
-                    >
+
+                        className="cursor-pointer h-[34px] w-[87px] text-[18px] font-bold text-[#1235C7] rounded-lg border border-[#1235C7]
+                        shadow-[2px_2px_7px_rgba(0,0,0,0.1),8px_9px_12px_rgba(0,0,0,0.09),19px_20px_16px_rgba(0,0,0,0.05),34px_35px_20px_rgba(0,0,0,0.01),53px_55px_21px_rgba(0,0,0,0)]">
                         Увійти
                     </button>
                     <button
