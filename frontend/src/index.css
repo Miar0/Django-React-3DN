@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+@theme {
+    --breakpoint-*: initial;
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 976px;
+    --breakpoint-xl: 1024px;
+    --color-nav-btn: #2E256F;
+}
+
+@layer utilities {
+    /*COLORS*/
+    .register-btn {
+        background: linear-gradient(90deg, #1235C7, #0E2897, #0C227F, #0C2488, #091A61);
+    },
+
+    .login-btn {
+        background: linear-gradient(90deg, #EBE8E8, #CAD2DA);
+    }
+
+
+    /* SHADOW   */
+    /*.login-shadow {*/
+    /*    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1),*/
+    /*    8px 9px 12px rgba(0, 0, 0, 0.09),*/
+    /*    19px 20px 16px rgba(0, 0, 0, 0.05),*/
+    /*    34px 35px 20px rgba(0, 0, 0, 0.01),*/
+    /*    53px 55px 21px rgba(0, 0, 0, 0);*/
+    /*}*/
+}
