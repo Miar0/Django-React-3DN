@@ -1,11 +1,18 @@
-// src/App.jsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
+import HomePage from './pages/HomePage'
+import Layout from './components/Layout'
 
 function App() {
     return (
-        <>
-            <Header />
-        </>
+        <Router>
+            <Layout>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                </Routes>
+            </Layout>
+        </Router>
     )
 }
 
