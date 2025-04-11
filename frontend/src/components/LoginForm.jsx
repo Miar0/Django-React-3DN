@@ -1,3 +1,5 @@
+import CheckboxWithLabel from '../components/CheckboxWithLabel'
+
 const LoginForm = () => {
     return (
         <form className="space-y-6 py-9 px-18 w-full text-white">
@@ -42,15 +44,21 @@ const LoginForm = () => {
                 </div>
             </div>
 
-            <div className="flex items-center justify-between text-sm">
-                <label className="flex items-center space-x-2">
-                    <div className="flex items-center ring ring-[#00000026] dark:ring-white rounded-xs h-3 w-3">
-                        <input
-                            type="checkbox"
-                            className="h-3 w-3 invisible checked:visible"
-                        />
+            <div className="flex flex-row items-center justify-between text-sm">
+                <label className="flex items-center justify-center space-x-2">
+                    {/*<div className="flex items-center ring ring-[#00000026] dark:ring-white rounded-xs h-3 w-3">*/}
+                    {/*    <input*/}
+                    {/*        type="checkbox"*/}
+                    {/*        className="h-3 w-3 invisible checked:visible"*/}
+                    {/*    />*/}
+                    {/*</div>*/}
+                    <div className="flex items-center justify-center ">
+                        <CheckboxWithLabel/>
                     </div>
-                    <span className="text-md text-black dark:text-white">Запам'ятати мене</span>
+                    <span
+                        className="text-md text-black dark:text-white">
+                        Запам'ятати мене
+                    </span>
                 </label>
 
                 <button
