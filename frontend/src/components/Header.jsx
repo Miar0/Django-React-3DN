@@ -21,10 +21,10 @@ const Header = () => {
                     <nav
                         className="flex items-center bg-[#D2D2D2]/40 backdrop-blur-md rounded-2xl h-[50px] shadow-[3px_3px_9px_rgba(0,0,0,0.1)] px-12 gap-28">
                         <a href="#"
-                           className="text-md font-sm text-[#2E256F]">Головна</a>
+                           className="text-md font-sm text-nav-btn">Головна</a>
                         <a href="#"
-                           className="text-md font-sm text-[#2E256F]">Новини</a>
-                        <a href="#" className="text-md font-sm text-[#2E256F]">Про
+                           className="text-md font-sm text-nav-btn">Новини</a>
+                        <a href="#" className="text-md font-sm text-nav-btn">Про
                             нас</a>
                     </nav>
                 </div>
@@ -32,14 +32,13 @@ const Header = () => {
                 {/* Auth Buttons */}
                 <div className="flex gap-3 ">
                     <button
-                        className="cursor-pointer h-[34px] w-[87px] text-[18px] font-bold text-[#1235C7] rounded-lg from-[#EBE8E8] to-[#CAD2DA] border border-[#1235C7] shadow-[2px_2px_7px_rgba(0,0,0,0.1),8px_9px_12px_rgba(0,0,0,0.09),19px_20px_16px_rgba(0,0,0,0.05),34px_35px_20px_rgba(0,0,0,0.01),53px_55px_21px_rgba(0,0,0,0)]">
+                        className="cursor-pointer h-[34px] w-[87px] text-[18px] font-bold text-[#1235C7] rounded-lg login-btn border border-[#1235C7]
+                        shadow-[2px_2px_7px_rgba(0,0,0,0.1),8px_9px_12px_rgba(0,0,0,0.09),19px_20px_16px_rgba(0,0,0,0.05),34px_35px_20px_rgba(0,0,0,0.01),53px_55px_21px_rgba(0,0,0,0)]">
                         Увійти
                     </button>
                     <button
-                        className="cursor-pointer h-[34px] w-[125px] text-[18px] font-bold text-[#EDF2F7] rounded-lg shadow-[1px_2px_6px_rgba(0,0,0,0.15),5px_9px_10px_rgba(0,0,0,0.13),12px_20px_14px_rgba(0,0,0,0.08),21px_36px_17px_rgba(0,0,0,0.02),32px_56px_18px_rgba(0,0,0,0)]"
-                        style={{
-                            background: 'linear-gradient(90deg, #1235C7, #0E2897, #0C227F, #0C2488, #091A61)',
-                        }}
+                        className="cursor-pointer h-[34px] w-[125px] text-[18px] font-bold register-btn text-[#EDF2F7] rounded-lg
+                         shadow-[1px_2px_6px_rgba(0,0,0,0.15),5px_9px_10px_rgba(0,0,0,0.13),12px_20px_14px_rgba(0,0,0,0.08),21px_36px_17px_rgba(0,0,0,0.02),32px_56px_18px_rgba(0,0,0,0)]"
                     >
                         Реєстрація
                     </button>
