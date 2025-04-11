@@ -1,4 +1,4 @@
-import CheckboxWithLabel from '../components/CheckboxWithLabel'
+import CheckboxWithLabel from '../components/Checkbox'
 
 const LoginForm = () => {
     return (
@@ -46,12 +46,6 @@ const LoginForm = () => {
 
             <div className="flex flex-row items-center justify-between text-sm">
                 <label className="flex items-center justify-center space-x-2">
-                    {/*<div className="flex items-center ring ring-[#00000026] dark:ring-white rounded-xs h-3 w-3">*/}
-                    {/*    <input*/}
-                    {/*        type="checkbox"*/}
-                    {/*        className="h-3 w-3 invisible checked:visible"*/}
-                    {/*    />*/}
-                    {/*</div>*/}
                     <div className="flex items-center justify-center ">
                         <CheckboxWithLabel/>
                     </div>

@@ -7,10 +7,14 @@
     --breakpoint-lg: 976px;
     --breakpoint-xl: 1024px;
     --color-nav-btn: #2E256F;
+    --color-header-dark: #202F69;
+    --color-nav-dark: #FFFFFF;
+    /*--color-text-dark-: #FFFFFF;*/
+    --color-dark-fond: #080B2A;
 }
 
 @layer utilities {
-    /*COLORS*/
+    /*COLORS LIGHT-MODE*/
     .register-btn {
         background: linear-gradient(90deg, #1235C7, #0E2897, #0C227F, #0C2488, #091A61);
     }
@@ -24,6 +28,16 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
+    /*.dark-gradient {*/
+    /*    background: linear-gradient(135deg, #8BBD8E 0%, #FFFFFF 50%, #999999 100%);*/
+    /*    -webkit-background-clip: text;*/
+    /*    -webkit-text-fill-color: transparent;*/
+    /*}*/
+
+    /*COLOR DARK_MODE*/
+
+
 
     /* SHADOW   */
     /*.login-shadow {*/
