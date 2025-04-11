@@ -5,7 +5,7 @@ const Modal = ({isOpen, onClose, children}) => {
     if (!isOpen) return null
 
     return (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm  flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center z-50">
             <motion.div
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
@@ -14,7 +14,7 @@ const Modal = ({isOpen, onClose, children}) => {
                     duration: 0.5,
                     ease: "easeOut",
                 }}
-                className="bg-gradient-to-br from-[#F5F6FA]/60 to-[#6D81CE]/60 backdrop-blur-md rounded-4xl shadow-2xl w-full max-w-xl p-1 relative"
+                className="bg-gradient-to-br dark:from-[#F5F6FA]/60 dark:to-[#6D81CE]/60 from-[#F5F6FA]/90 to-[#6D81CE]/90 rounded-4xl shadow-2xl w-full max-w-xl p-1 relative"
             >
                 <button
                     onClick={onClose}
