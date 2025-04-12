@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Modal from './components/Modal'
 import LoginForm from './components/LoginForm'
 import RegisterForm from './components/RegisterForm'
+import AnnouncementPage from './pages/AnnouncementPage'
 
 function App() {
     const [modalType, setModalType] = useState(null)
@@ -21,6 +22,7 @@ function App() {
                 />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/announcements" element={<AnnouncementPage />} />
                 </Routes>
                 <Modal isOpen={modalType !== null} onClose={closeModal}>
                   {modalType === 'login' ? <LoginForm /> : <RegisterForm />}
