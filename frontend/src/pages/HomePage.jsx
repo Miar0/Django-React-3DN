@@ -6,6 +6,8 @@ import blueEllipse from '../assets/icons/blue-ellipse.svg';
 import rightBlueEllipse from '../assets/icons/right-blue-ellipse.svg';
 import Carousel from '../components/carousel/Carousel';
 import WhyUsSection from '../components/WhyUsSection';
+import ReviewSection from '../components/reviews/ReviewSection';
+
 
 const HomePage = () => {
     return (
@@ -62,8 +64,9 @@ const HomePage = () => {
                         </button>
 
                         <button
-                            className="cursor-pointer w-[250px] h-[50px] rounded-full bg-white border border-[#202857] shadow-[0_4px_20px_rgba(104,109,224,0.5)]"
+                            className="cursor-pointer w-[250px] h-[50px] rounded-full bg-white border border-[#202857] text-[#202857] shadow-[0_4px_20px_rgba(104,109,224,0.5)]"
                         >
+                            Передати в добрі руки
                         </button>
                     </div>
                 </div>
@@ -80,6 +83,7 @@ const HomePage = () => {
         </section>
          <Carousel />
         <WhyUsSection />
+        <ReviewSection />
 
         </>
     );
