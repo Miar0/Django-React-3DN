@@ -40,8 +40,8 @@ const Carousel = () => {
     };
 
     return (
-        <section className="bg-[#EDF2F7] dark:bg-dark-fond py-12">
-            <div className="max-w-[1440px] mx-auto px-19 mt-12 ">
+        <section className="bg-[#EDF2F7] dark:bg-dark-fond py-12 mt-20">
+            <div className="max-w-[1440px] mx-auto px-19 pb-14 flex flex-col justify-center ">
                 <h2 className="text-[32px] text-[#202857] font-medium text-center mb-10 drop-shadow-[0_4px_4px_rgba(0,0,0,0.23)]
                 dark:text-white">
                     Зазирніть до наших улюбленців
