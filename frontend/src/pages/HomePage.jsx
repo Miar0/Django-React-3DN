@@ -5,6 +5,7 @@ import greenEllipse from '../assets/icons/green-ellipse.svg';
 import blueEllipse from '../assets/icons/blue-ellipse.svg';
 import rightBlueEllipse from '../assets/icons/right-blue-ellipse.svg';
 import Carousel from '../components/carousel/Carousel';
+import WhyUsSection from '../components/WhyUsSection';
 
 const HomePage = () => {
     return (
@@ -78,6 +79,8 @@ const HomePage = () => {
             </div>
         </section>
          <Carousel />
+        <WhyUsSection />
+
         </>
     );
 };
