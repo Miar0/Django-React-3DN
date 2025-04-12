@@ -32,9 +32,28 @@ const pets = [
         type: "Собака",
         image: dogLabrador,
     },
+
     {
         id: 5,
+        name: "Котик Мурчик",
+        type: "Кіт",
+        image: catM,
+    },
+    {
+        id: 6,
         name: "Собака Лабрадор",
+        image: dogLabrador,
+    },
+    {
+        id: 7,
+        name: "Хом’як Пух",
+        type: "Хом'як",
+        image: hamsterM,
+    },
+    {
+        id: 8,
+        name: "Собака Бім",
+        type: "Собака",
         image: dogLabrador,
     },
 ];

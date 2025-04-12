@@ -27,7 +27,7 @@ const Carousel = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prev) => (prev + 1) % pets.length);
-        }, 3000);
+        }, 3500);
         return () => clearInterval(interval);
     }, []);
 
@@ -41,13 +41,13 @@ const Carousel = () => {
 
     return (
         <section className="bg-[#EDF2F7] dark:bg-dark-fond py-12">
-            <div className="max-w-[1440px] mx-auto px-19 mt-20 ">
+            <div className="max-w-[1440px] mx-auto px-19 mt-12 ">
                 <h2 className="text-[32px] text-[#202857] font-medium text-center mb-10 drop-shadow-[0_4px_4px_rgba(0,0,0,0.23)]
                 dark:text-white">
                     Зазирніть до наших улюбленців
                 </h2>
 
-                <div className="relative">
+                <div className="relative justify-center">
                     {/* Стрілка вліво */}
                     <button
                         onClick={handlePrev}
@@ -60,24 +60,23 @@ const Carousel = () => {
                     {/* Вікно-контейнер */}
                     <div
                         ref={containerRef}
-                        className="relative w-full "
+                        className="relative w-full overflow-hidden"
                     >
                         {/* Лінійка з картками */}
                         <div
-                            className="flex pl-4 pr-4"
+                            className="flex pl-4 pr-4 will-change-transform py-4"
                             style={{
                                 gap: `${GAP}px`,
                                 width: `${pets.length * (CARD_WIDTH + GAP)}px`,
-                                overflow: 'visible',
                             }}
                         >
                             {pets.map((pet, idx) => (
                                 <div
                                     key={pet.id}
-                                    className="flex-shrink-0 transition-transform duration-300"
-                                    style={{ width: `${CARD_WIDTH}px` }}
+                                    className="flex-shrink-0"
+                                    style={{width: `${CARD_WIDTH}px`}}
                                 >
-                                    <PetCard pet={pet} />
+                                    <PetCard pet={pet}/>
                                 </div>
                             ))}
                         </div>
@@ -93,12 +92,14 @@ const Carousel = () => {
                     </button>
                 </div>
 
-                {/* Кнопка "Більше" */}
-                <div className="flex justify-center items-center mt-10">
-                    <button className="flex justify-center items-center px-10 py-3 h-11 w-40 text-white text-base font-semibold rounded-full
-                     bg-gradient-to-r from-[#202857] to-[#4658BD] shadow-lg cursor-pointer">
-                        Більше
-                    </button>
+                <div className="flex justify-center items-center mt-10 ">
+                    <div
+                        className="relative  rounded-full p-[2px] bg-gradient-to-r from-[#4658BD] to-[#202857] custom-shadow">
+                        <button
+                            className="flex justify-center items-center w-40 h-11 px-10 py-3 cursor-pointer bg-[#EDF2F7] dark:bg-dark-fond text-base font-semibold rounded-full text-[#202857] dark:text-white shadow-lg">
+                            Більше
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>

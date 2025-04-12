@@ -10,7 +10,7 @@ const Header = ({ onLoginOpen, onRegisterOpen }) => {
 
     return (
 
-        <header className="sticky top-0 z-50 w-full bg-header-bg dark:bg-header-dark/72 shadow-md rounded-b-xl bg-[#EDF2F7]
+        <header className=" top-0 z-50 w-full bg-header-bg dark:bg-header-dark/72 shadow-md rounded-b-xl bg-[#EDF2F7]
          shadow-[7px_35px_79px_rgba(0,0,0,0.2),27px_142px_144px_rgba(0,0,0,0.17),60px_319px_195px_rgba(0,0,0,0.1),107px_567px_231px_rgba(0,0,0,0.03),167px_385px_250px_rgba(0,0,0,0.01)]
         ">
             <div className="max-w-[1440px] mx-auto h-[88px] flex items-center justify-between px-0">
