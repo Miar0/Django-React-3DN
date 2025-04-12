@@ -1,12 +1,15 @@
-import React from 'react'
+import React from 'react';
 import pets from '../assets/images/pets.png'
-import greenEllipse from '../assets/icons/green-ellipse.svg'
-import blueEllipse from '../assets/icons/blue-ellipse.svg'
-import rightBlueEllipse from '../assets/icons/right-blue-ellipse.svg'
-
+import petsCard from '../components/carousel/PetCard.jsx';
+import greenEllipse from '../assets/icons/green-ellipse.svg';
+import blueEllipse from '../assets/icons/blue-ellipse.svg';
+import rightBlueEllipse from '../assets/icons/right-blue-ellipse.svg';
+import Carousel from '../components/carousel/Carousel';
 
 const HomePage = () => {
     return (
+        <>
+
         <section
             className="min-h-[calc(100vh-88px)] bg-[#EDF2F7] dark:bg-dark-fond  flex items-center justify-center relative overflow-hidden">
             <img
@@ -74,7 +77,9 @@ const HomePage = () => {
                 </div>
             </div>
         </section>
-    )
-}
+         <Carousel />
+        </>
+    );
+};
 
-export default HomePage
+export default HomePage;
