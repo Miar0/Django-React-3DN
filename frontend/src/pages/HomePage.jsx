@@ -1,12 +1,13 @@
 import React from 'react';
 import pets from '../assets/images/pets.png'
-import petsCard from '../components/carousel/PetCard.jsx';
+// import petsCard from '../components/carousel/PetCard.jsx';
 import greenEllipse from '../assets/icons/green-ellipse.svg';
 import blueEllipse from '../assets/icons/blue-ellipse.svg';
 import rightBlueEllipse from '../assets/icons/right-blue-ellipse.svg';
 import Carousel from '../components/carousel/Carousel';
 import WhyUsSection from '../components/WhyUsSection';
 import ReviewSection from '../components/reviews/ReviewSection';
+import { Link } from 'react-router-dom';
 
 
 const HomePage = () => {
@@ -57,11 +58,13 @@ const HomePage = () => {
 
                     {/* Buttons */}
                     <div className="flex gap-9 mt-8">
-                        <button
-                            className="cursor-pointer w-[250px] h-[50px] rounded-full shadow-[0_4px_20px_rgba(104,109,224,0.5)] primary-btn text-[#FFFFFF] dark:text-[#FFFFFF]"
-                        >
-                            Обрати улюбленця
-                        </button>
+                        <Link to={'/announcements'}>
+                            <button
+                                className="cursor-pointer w-[250px] h-[50px] rounded-full shadow-[0_4px_20px_rgba(104,109,224,0.5)] primary-btn text-[#FFFFFF] dark:text-[#FFFFFF]"
+                            >
+                                Обрати улюбленця
+                            </button>
+                        </Link>
 
                         <button
                             className="cursor-pointer w-[250px] h-[50px] rounded-full bg-white border border-[#202857] text-[#202857] shadow-[0_4px_20px_rgba(104,109,224,0.5)]"
