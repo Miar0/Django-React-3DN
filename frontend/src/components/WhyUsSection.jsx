@@ -1,13 +1,11 @@
 import React from 'react';
 import usPets from "../assets/images/us-pets.png";
-import usGreenEllipse from '../assets/icons/us-green-ellipse.svg';
 import usVector from '../assets/icons/us-vector.svg';
 
 const WhyUsSection = () => {
     return (
         <section
             className="relative bg-[#EDF2F7] dark:bg-[#080B2A]  overflow-hidden pt-49 pb-21 ">
-            {/* Green blurred background */}
             <div
                 className="absolute   ">
                 <div
@@ -26,21 +24,15 @@ const WhyUsSection = () => {
                 </div>
             </div>
 
-
-            {/* Optional second blurred background */}
-            {/* Пляма на фоні */}
             <div className="absolute left-[177px] top-[120px] w-[371px] h-[346px]  opacity-70 rounded-full bg-[#5AC461] blur-[350px] z-0 " />
 
-            {/* Контент: заголовок + зображення */}
             <div
                 className="relative z-10 max-w-[1440px] mx-auto px-6 flex flex-col items-center ">
                 <div className="flex flex-col items-end  ">
-                        {/* Заголовок – завжди зверху */}
                         <h2 className="text-[32px] lg:text-[36px] font-semibold text-[#202857] dark:text-[#C5C5C5] -mt-10 pr-76 pb-30">
                             Чому саме ми?
                         </h2>
 
-                        {/* Зображення тварин */}
                         <img
                             src={usPets}
                             alt="Pets group"
