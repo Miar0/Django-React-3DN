@@ -37,22 +37,22 @@ const HomePage = () => {
                     className="flex-1 flex flex-col pl-26 justify-center items-start text-left pb-18 z-10">
                     {/*Head Text*/}
                     <div className='flex flex-col mb-38 '>
-                        <h1 className="text-[60px] whitespace-nowrap font-extrabold leading-tight tracking-[0.8px] light:primary-text
-                        dark:bg-[linear-gradient(135deg,_#8BBD8E_0%,_#FFFFFF_90%,_#999999_100%)] bg-clip-text text-transparent
+                        <h1 className="text-[60px] whitespace-nowrap font-extrabold leading-tight tracking-[0.8px] bg-[linear-gradient(to_right,#202857,#4658BD)]
+                        dark:bg-[linear-gradient(135deg,_#8BBD8E_20%,_#FFFFFF_99%)] bg-clip-text text-transparent
                         mb-6 ">
                             Допоможи лапкам знайти дім
                         </h1>
                         <p className=" max-w-2xl text-[20px] text-black dark:text-[#FFFFFF] font-light leading-tight tracking-[2px] max-w-2xl">
                             Стань тим, хто подарує безпритульній тваринці не лише дах над
                             головою, а й тепло, турботу та
-                            <span className="text-[#3DA435] dark:text-[#8BFA92] "> нове життя</span>.
+                            <span className="text-[#3DA435] dark:text-[#8BFA92] "> нове життя.</span>
                         </p>
                     </div>
 
                     {/* Buttons */}
                     <div className="flex gap-9 mt-8">
                         <button
-                            className="cursor-pointer w-[250px] h-[50px] rounded-full shadow-[0_4px_20px_rgba(104,109,224,0.5)] primary-btn dark:text-[#FFFFFF]"
+                            className="cursor-pointer w-[250px] h-[50px] rounded-full shadow-[0_4px_20px_rgba(104,109,224,0.5)] primary-btn text-[#FFFFFF] dark:text-[#FFFFFF]"
                         >
                             Обрати улюбленця
                         </button>
