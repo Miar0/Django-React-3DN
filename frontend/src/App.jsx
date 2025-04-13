@@ -7,9 +7,10 @@ import Modal from './components/Modal'
 import LoginForm from './components/LoginForm'
 import RegisterForm from './components/RegisterForm'
 import AnnouncementPage from './pages/AnnouncementPage'
-import SheltersPage from './pages/SheltersPage';
-import ShelterDetailPage from './pages/ShelterDetailPage';
-import AnimalDetailPage from "./pages/AnimalDetailPage";
+import CreateAnnouncementPage from './pages/CreateAnnouncementPage'
+import SheltersPage from './pages/SheltersPage'
+import ShelterDetailPage from './pages/ShelterDetailPage'
+import AnimalDetailPage from "./pages/AnimalDetailPage"
 import Footer from './components/Footer'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/announcements" element={<AnnouncementPage />} />
+                    <Route path="/announcements/create" element={<CreateAnnouncementPage />} />
                     <Route path="/animals/:id" element={<AnimalDetailPage />} />
                     <Route path="/shelters" element={<SheltersPage />} />
                     <Route path="/shelters/:id" element={<ShelterDetailPage />} />
