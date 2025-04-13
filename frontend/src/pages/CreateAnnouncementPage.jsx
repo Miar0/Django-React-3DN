@@ -133,7 +133,6 @@ const CreateAnnouncementPage = () => {
                     )}
                 </div>
 
-                {/* Ім’я */}
                 <div>
                     <label className="block mb-1 font-medium dark:text-white">Ім’я *</label>
                     <input
@@ -145,7 +144,6 @@ const CreateAnnouncementPage = () => {
                     />
                 </div>
 
-                {/* Тип / Стать */}
                 <div className="grid grid-cols-2 gap-4">
                     <div>
                         <label className="block mb-1 font-medium dark:text-white">Тип *</label>
@@ -182,7 +180,6 @@ const CreateAnnouncementPage = () => {
                     </div>
                 </div>
 
-                {/* Вік / Порода */}
                 <div className="grid grid-cols-2 gap-4">
                     <div>
                         <label className="block mb-1 font-medium dark:text-white">Вік *</label>
@@ -206,7 +203,6 @@ const CreateAnnouncementPage = () => {
                     </div>
                 </div>
 
-                {/* Стан / Контакт */}
                 <div className="grid grid-cols-2 gap-4">
                     <div>
                         <label className="block mb-1 font-medium dark:text-white">Стан здоров’я *</label>
@@ -239,7 +235,6 @@ const CreateAnnouncementPage = () => {
                     </div>
                 </div>
 
-                {/* Опис */}
                 <div>
                     <label className="block mb-1 font-medium dark:text-white">Опис тваринки</label>
                     <textarea
@@ -252,7 +247,6 @@ const CreateAnnouncementPage = () => {
                     ></textarea>
                 </div>
 
-                {/* Кнопка */}
                 <div className="text-center">
                     <button
                         type="submit"

@@ -1,6 +1,9 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getPetById } from '../utils/storage';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const AnimalDetailPage = () => {
     const { id } = useParams();
@@ -14,21 +17,37 @@ const AnimalDetailPage = () => {
         );
     }
 
+    const sliderSettings = {
+        dots: true,
+        arrows: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+    };
+
     return (
-        <div className="min-h-screen dark:bg-dark-fond px-4 py-10 md:px-12 max-w-[1440px] mx-auto">
+        <div className="min-h-screen bg-[#F8FAF9] dark:bg-dark-fond px-4 py-10 md:px-12 max-w-[1440px] mx-auto">
             <Link to="/announcements" className="text-blue-600 dark:text-blue-400 hover:underline mb-6 block">
                 ← Повернутися до оголошень
             </Link>
 
             <div className="flex flex-col md:flex-row gap-10 bg-white dark:bg-[#1C1C2E] rounded-3xl shadow-md p-6">
-                {/* Галерея */}
-                <div className="flex-shrink-0 w-full md:w-1/2 grid grid-cols-1 gap-4">
-                    {pet.images.map((src, idx) => (
-                        <img key={idx} src={src} alt={`Фото ${idx + 1}`} className="rounded-2xl w-full object-cover shadow" />
-                    ))}
+                <div className="w-full md:w-1/2">
+                    {pet.images && pet.images.length > 0 ? (
+                        <Slider {...sliderSettings}>
+                            {pet.images.map((src, idx) => (
+                                <div key={idx} className="rounded-2xl overflow-hidden">
+                                    <img src={src} alt={`Фото ${idx + 1}`} className="w-full h-[300px] object-cover rounded-xl" />
+                                </div>
+                            ))}
+                        </Slider>
+                    ) : (
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Фото відсутні</p>
+                    )}
                 </div>
 
-                {/* Інфо */}
                 <div className="w-full md:w-1/2 text-gray-800 dark:text-gray-200">
                     <h2 className="text-[28px] md:text-[32px] font-bold text-[#202857] dark:text-white mb-2">
                         {pet.name}
@@ -58,7 +77,9 @@ const AnimalDetailPage = () => {
             </div>
 
             <div className="mt-8 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 p-4 rounded-2xl text-center text-sm shadow-inner">
-                Ця тваринка {pet.healthStatus === 'Здоровий' ? 'готова до усиновлення 🐾' : 'потребує додаткового догляду 🩺'}
+                {pet.healthStatus === 'Здоровий'
+                    ? 'Ця тваринка готова до усиновлення 🐾'
+                    : 'Тваринка потребує додаткового догляду 🩺'}
             </div>
         </div>
     );
