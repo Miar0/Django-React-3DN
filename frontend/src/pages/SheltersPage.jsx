@@ -65,7 +65,7 @@ const SheltersPage = () => {
                         </p>
 
                         <Link to={`/shelters/${shelter.id}`}>
-                            <button className="w-full mt-4 py-2 bg-[#2563EB] text-white rounded-full hover:bg-[#1E40AF] transition">
+                            <button className="w-full cursor-pointer mt-4 py-2 bg-[#2563EB] text-white rounded-full hover:bg-[#1E40AF] transition">
                                 Перейти до притулку
                             </button>
                         </Link>

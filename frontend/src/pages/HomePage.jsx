@@ -67,11 +67,14 @@ const HomePage = () => {
                             </button>
                         </Link>
 
-                        <button
-                            className="cursor-pointer w-[250px] h-[50px] rounded-full bg-white border border-[#202857] text-[#202857] shadow-[0_4px_20px_rgba(104,109,224,0.5)]"
-                        >
-                            Передати в добрі руки
-                        </button>
+                        <Link to={'/shelters'}>
+                            <button
+                                className="cursor-pointer w-[250px] h-[50px] rounded-full bg-white border border-[#202857] text-[#202857] shadow-[0_4px_20px_rgba(104,109,224,0.5)]"
+                            >
+                                Передати в добрі руки
+                            </button>
+                        </Link>
+
                     </div>
                 </div>
 

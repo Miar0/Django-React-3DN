@@ -37,14 +37,24 @@ const ShelterDetailPage = () => {
                         <h3 className="font-semibold text-lg text-gray-700 dark:text-gray-300 mb-2">Про нас</h3>
                         <p className="text-gray-600 dark:text-gray-400">{shelter.description}</p>
                     </div>
-                    <a
-                        href={shelter.website ? `https://${shelter.website}` : "#"}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="mt-4 inline-block bg-[#2563EB] text-white py-2 px-4 rounded-full hover:bg-[#1E40AF] transition w-max"
-                    >
-                        Зв'язатися з притулком
-                    </a>
+
+                    <div className="mt-4 flex items-center  gap-4 w-full">
+                        <a
+                            href={shelter.website ? `https://${shelter.website}` : "#"}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="bg-[#2563EB] text-white py-2 px-4 rounded-full hover:bg-[#1E40AF] transition"
+                        >
+                            Зв'язатися з притулком
+                        </a>
+
+                        <Link
+                            to="/create-announcement"
+                            className="bg-white border border-[#2563EB] text-[#2563EB] py-2 px-4 rounded-full hover:bg-[#F0F4FF] transition"
+                        >
+                            Передати тваринку
+                        </Link>
+                    </div>
                 </div>
             </div>
 

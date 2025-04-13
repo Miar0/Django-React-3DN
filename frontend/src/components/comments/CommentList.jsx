@@ -70,15 +70,15 @@ const CommentList = ({ storageKey = 'comments_default' }) => {
         <div className="mt-10">
             <h2 className="text-xl font-semibold mb-4">Коментарі</h2>
 
-            <SortDropdown
-                selected={sortBy}
-                onChange={setSortBy}
-                options={[
-                    { value: 'newest', label: 'Найновіші' },
-                    { value: 'oldest', label: 'Найстаріші' },
-                    { value: 'author', label: 'За автором' }
-                ]}
-            />
+            {/*<SortDropdown*/}
+            {/*    selected={sortBy}*/}
+            {/*    onChange={setSortBy}*/}
+            {/*    options={[*/}
+            {/*        { value: 'newest', label: 'Найновіші' },*/}
+            {/*        { value: 'oldest', label: 'Найстаріші' },*/}
+            {/*        { value: 'author', label: 'За автором' }*/}
+            {/*    ]}*/}
+            {/*/>*/}
 
             <div className="mt-4">
         <textarea
@@ -95,7 +95,7 @@ const CommentList = ({ storageKey = 'comments_default' }) => {
                 </button>
             </div>
 
-            {sorted.length > 0 ? (
+            {sorted.length > 0 && (
                 <div className="mt-6 space-y-4">
                     {sorted.map(comment => (
                         <CommentItem
@@ -111,9 +111,8 @@ const CommentList = ({ storageKey = 'comments_default' }) => {
                         />
                     ))}
                 </div>
-            ) : (
-                <p className="text-gray-500 dark:text-gray-400 mt-4">Коментарі відсутні.</p>
             )}
+
         </div>
     );
 };
