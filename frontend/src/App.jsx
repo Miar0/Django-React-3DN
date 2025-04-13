@@ -7,6 +7,8 @@ import Modal from './components/Modal'
 import LoginForm from './components/LoginForm'
 import RegisterForm from './components/RegisterForm'
 import AnnouncementPage from './pages/AnnouncementPage'
+import SheltersPage from './pages/SheltersPage';
+import ShelterDetailPage from './pages/ShelterDetailPage';
 import Footer from './components/Footer'
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/announcements" element={<AnnouncementPage />} />
+                    <Route path="/shelters" element={<SheltersPage />} />
+                    <Route path="/shelters/:id" element={<ShelterDetailPage />} /> {/* 👈 */}
                 </Routes>
                 <Modal isOpen={modalType !== null} onClose={closeModal}>
                   {modalType === 'login' ? <LoginForm /> : <RegisterForm />}

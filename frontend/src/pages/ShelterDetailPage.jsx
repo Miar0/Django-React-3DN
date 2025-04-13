@@ -1,0 +1,73 @@
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
+import shelters from '../data/shelters';
+
+const ShelterDetailPage = () => {
+    const { id } = useParams();
+    const shelter = shelters.find(s => s.id === Number(id));
+
+    if (!shelter) {
+        return (
+            <div className="min-h-screen bg-[#F8FAF9] dark:bg-dark-fond p-6 text-center">
+                <h1 className="text-2xl text-red-600 dark:text-red-400">Притулок не знайдено</h1>
+                <Link to="/shelters" className="text-blue-500 hover:underline block mt-4">
+                    Повернутися до Притулків
+                </Link>
+            </div>
+        );
+    }
+
+    return (
+        <div className="min-h-screen bg-[#F8FAF9] dark:bg-dark-fond px-4 py-8 md:px-12">
+            <Link to="/shelters" className="text-blue-600 hover:underline dark:text-blue-400 mb-6 block">
+                ← Повернутися до Притулків
+            </Link>
+
+            <div className="bg-white dark:bg-[#1C1C2E] rounded-2xl shadow-md p-6 mb-10 grid md:grid-cols-2 gap-4">
+                <div>
+                    <h2 className="text-[24px] font-bold text-[#202857] dark:text-white mb-4">{shelter.name}</h2>
+                    <h3 className="font-semibold text-lg text-gray-700 dark:text-gray-300 mb-2">Інформація про притулок</h3>
+                    <p><strong>Тип:</strong> {shelter.type}</p>
+                    <p><strong>Розташування:</strong> {shelter.location}</p>
+                    {shelter.contact && <p><strong>Контакти:</strong> {shelter.contact}</p>}
+                </div>
+
+                <div className="flex flex-col justify-between">
+                    <div>
+                        <h3 className="font-semibold text-lg text-gray-700 dark:text-gray-300 mb-2">Про нас</h3>
+                        <p className="text-gray-600 dark:text-gray-400">{shelter.description}</p>
+                    </div>
+                    <a
+                        href={shelter.website ? `https://${shelter.website}` : "#"}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-4 inline-block bg-[#2563EB] text-white py-2 px-4 rounded-full hover:bg-[#1E40AF] transition w-max"
+                    >
+                        Зв'язатися з притулком
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h2 className="text-[20px] md:text-[24px] font-semibold text-[#202857] dark:text-white mb-4">Доступні тварини</h2>
+                {shelter.available === 0 ? (
+                    <div className="bg-white dark:bg-[#1C1C2E] rounded-2xl p-6 shadow-md">
+                        <h3 className="text-lg font-semibold mb-2">Жодна тварина недоступна.</h3>
+                        <p className="text-gray-600 dark:text-gray-300">
+                            У цьому притулку немає жодної тварини, зазначеної для усиновлення.
+                        </p>
+                        <p className="mt-2 text-gray-600 dark:text-gray-300">
+                            Будь ласка, перевірте пізніше.
+                        </p>
+                    </div>
+                ) : (
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="text-gray-500 dark:text-gray-300">[тут буде список тварин]</div>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+};
+
+export default ShelterDetailPage;
