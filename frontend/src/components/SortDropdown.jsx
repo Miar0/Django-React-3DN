@@ -13,7 +13,7 @@ const SortDropdown = ({ options = defaultOptions, onChange, selected }) => {
     return (
         <div className="relative">
             <button
-                className="flex items-center  gap-2 px-4 py-2 border border-[#07006D] text-[#07006D] rounded-full hover:bg-gray-50 transition"
+                className="flex cursor-pointer items-center dark:text-blue-100 dark:border-white/20 dark:hover:bg-gray-700 gap-2 px-4 py-2 border border-[#07006D] text-[#07006D] rounded-full hover:bg-gray-50 transition"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <BiSortAlt2 />
@@ -27,7 +27,7 @@ const SortDropdown = ({ options = defaultOptions, onChange, selected }) => {
                     {options.map((option) => (
                         <div
                             key={option.value}
-                            className={`px-4 py-2 cursor-pointer hover:bg-gray-100 text-sm ${
+                            className={`px-4 py-2 cursor-pointer hover:bg-gray-300/20 text-sm ${
                                 selected === option.value ? 'font-semibold' +
                                     ' text-green-400' : ''
                             }`}
