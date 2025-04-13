@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PetCard = ({ pet }) => {
+    const previewImage = Array.isArray(pet.images) && pet.images.length > 0
+        ? pet.images[0]
+        : 'https://via.placeholder.com/300';
+
     return (
         <Link to={`/animals/${pet.id}`}>
             <div className="w-full max-w-[300px] h-100 mx-auto px-4 pt-4
@@ -11,7 +15,7 @@ const PetCard = ({ pet }) => {
         dark:bg-[linear-gradient(to_bottom,_#1B1E4B_0%,_#A6B1C6_100%)]"
             >
                 <img
-                    src={pet?.image}
+                    src={previewImage}
                     alt={pet?.name || 'Котик'}
                     className="w-68 h-56 object-cover rounded-[18px]
           border-1 border-[rgba(0,0,0,0.19)]
