@@ -7,6 +7,7 @@ import Modal from './components/Modal'
 import LoginForm from './components/LoginForm'
 import RegisterForm from './components/RegisterForm'
 import AnnouncementPage from './pages/AnnouncementPage'
+import Footer from './components/Footer'
 
 function App() {
     const [modalType, setModalType] = useState(null)
@@ -27,6 +28,7 @@ function App() {
                 <Modal isOpen={modalType !== null} onClose={closeModal}>
                   {modalType === 'login' ? <LoginForm /> : <RegisterForm />}
                 </Modal>
+                <Footer></Footer>
             </Layout>
         </Router>
     )
