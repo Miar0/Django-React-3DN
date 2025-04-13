@@ -7,6 +7,7 @@ import rightBlueEllipse from '../assets/icons/right-blue-ellipse.svg';
 import Carousel from '../components/carousel/Carousel';
 import WhyUsSection from '../components/WhyUsSection';
 import ReviewSection from '../components/reviews/ReviewSection';
+import NewsSection from '../components/news/NewsSection';
 import { Link } from 'react-router-dom';
 
 
@@ -87,7 +88,7 @@ const HomePage = () => {
          <Carousel />
         <WhyUsSection />
         <ReviewSection />
-
+        <NewsSection />
         </>
     );
 };
