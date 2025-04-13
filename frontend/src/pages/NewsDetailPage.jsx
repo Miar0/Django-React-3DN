@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import news from '../data/news';
+import CommentSection from '../components/CommentSection';
 
 const NewsDetailPage = () => {
     const { id } = useParams();
@@ -36,6 +37,7 @@ const NewsDetailPage = () => {
                     <code>news.js</code>, або реалізувати Markdown/редактор/коментарі.
                 </p>
             </div>
+            <CommentSection newsId={item.id} />
         </div>
     );
 };
