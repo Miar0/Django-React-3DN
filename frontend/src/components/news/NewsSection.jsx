@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const NewsSection = () => {
     return (
-        <section className="relative w-full py-20 px-4 lg:px-16 text-[#1B1B1B] dark:text-white bg-[--color-news-bg-light] dark:bg-transparent">
+        <section className="relative  w-full py-8 px-4 lg:px-16 text-[#1B1B1B] dark:text-white bg-[--color-news-bg-light] dark:bg-transparent">
             {/* Заголовок */}
             <div className="flex justify-center mb-12">
                 <div className="w-[522px] h-[60px] flex items-center justify-center rounded-md
