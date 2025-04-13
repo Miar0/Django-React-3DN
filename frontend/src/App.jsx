@@ -9,6 +9,7 @@ import RegisterForm from './components/RegisterForm'
 import AnnouncementPage from './pages/AnnouncementPage'
 import SheltersPage from './pages/SheltersPage';
 import ShelterDetailPage from './pages/ShelterDetailPage';
+import AnimalDetailPage from "./pages/AnimalDetailPage";
 import Footer from './components/Footer'
 
 function App() {
@@ -26,8 +27,9 @@ function App() {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/announcements" element={<AnnouncementPage />} />
+                    <Route path="/animals/:id" element={<AnimalDetailPage />} />
                     <Route path="/shelters" element={<SheltersPage />} />
-                    <Route path="/shelters/:id" element={<ShelterDetailPage />} /> {/* 👈 */}
+                    <Route path="/shelters/:id" element={<ShelterDetailPage />} />
                 </Routes>
                 <Modal isOpen={modalType !== null} onClose={closeModal}>
                   {modalType === 'login' ? <LoginForm /> : <RegisterForm />}
