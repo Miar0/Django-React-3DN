@@ -3,13 +3,20 @@ import news from '../data/news';
 import { Link } from 'react-router-dom';
 import SortDropdown from '../components/SortDropdown';
 import Pagination from '../components/Pagination';
+import SearchInput from '../components/SearchInput';
 
 const NewsListPage = () => {
     const [sortOption, setSortOption] = useState('newest');
+    const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(0);
     const PER_PAGE = 6;
 
-    const sortedNews = [...news].sort((a, b) => {
+    const filteredNews = news.filter(item =>
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const sortedNews = [...filteredNews].sort((a, b) => {
         if (sortOption === 'newest') return new Date(b.date) - new Date(a.date);
         if (sortOption === 'oldest') return new Date(a.date) - new Date(b.date);
         if (sortOption === 'title') return a.title.localeCompare(b.title);
@@ -26,7 +33,12 @@ const NewsListPage = () => {
         <div className="min-h-screen bg-[#EDF2F7] mt-2 dark:bg-dark-fond text-[#1B1B1B] dark:text-white px-4 py-6 sm:py-8 md:py-10 max-w-[1440px] mx-auto">
             <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">Останні новини</h1>
 
-            <div className="flex justify-end mb-4 sm:mb-6">
+            <div className="flex flex-col sm:flex-row justify-between gap-4 mb-6 sm:items-center">
+                <SearchInput
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    placeholder="Шукати за назвою або описом..."
+                />
                 <SortDropdown
                     selected={sortOption}
                     onChange={setSortOption}
