@@ -13,6 +13,7 @@ import ShelterDetailPage from './pages/ShelterDetailPage'
 import AnimalDetailPage from "./pages/AnimalDetailPage"
 import NewsDetailPage from './pages/NewsDetailPage';
 import NewsListPage from './pages/NewsListPage';
+import DashboardShelter from './pages/DashboardShelter';
 import Footer from './components/Footer'
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
                     <Route path="/news" element={<NewsListPage />} />
                     <Route path="/shelters" element={<SheltersPage />} />
                     <Route path="/shelters/:id" element={<ShelterDetailPage />} />
+                    <Route path="/dashboard/shelter" element={<DashboardShelter />} />
+
                 </Routes>
                 <Modal isOpen={modalType !== null} onClose={closeModal}>
                   {modalType === 'login' ? <LoginForm /> : <RegisterForm />}
