@@ -1,4 +1,3 @@
-// components/comments/CommentList.jsx
 import React, { useEffect, useState } from 'react';
 import CommentItem from './CommentItem';
 import SortDropdown from '../SortDropdown';
@@ -7,6 +6,8 @@ const CommentList = ({ storageKey = 'comments_default' }) => {
     const [comments, setComments] = useState([]);
     const [commentText, setCommentText] = useState('');
     const [sortBy, setSortBy] = useState('newest');
+    const [likedComments, setLikedComments] = useState({});
+    const [replyingTo, setReplyingTo] = useState(null);
 
     useEffect(() => {
         const stored = localStorage.getItem(storageKey);
@@ -32,31 +33,26 @@ const CommentList = ({ storageKey = 'comments_default' }) => {
     };
 
     const handleLike = (id) => {
-        setComments(prev => prev.map(c =>
-            c.id === id ? { ...c, likes: (c.likes || 0) + 1 } : c
-        ));
+        const alreadyLiked = likedComments[id];
+        setComments(prev => prev.map(c => c.id === id ? { ...c, likes: alreadyLiked ? c.likes - 1 : c.likes + 1 } : c));
+        setLikedComments(prev => ({ ...prev, [id]: !alreadyLiked }));
     };
 
     const handleEdit = (id, text) => {
-        setComments(prev => prev.map(c =>
-            c.id === id ? { ...c, text } : c
-        ));
+        setComments(prev => prev.map(c => c.id === id ? { ...c, text } : c));
     };
 
     const handleDelete = (id) => {
         setComments(prev => prev.filter(c => c.id !== id));
     };
 
-    const handleReply = (parentId) => {
-        const replyText = prompt("Ваша відповідь:");
-        if (!replyText) return;
+    const handleReply = (parentId, replyText) => {
         const reply = {
             id: Date.now(),
             author: 'Анонім',
             text: replyText,
             date: new Date().toISOString(),
-            likes: 0,
-            replies: []
+            likes: 0
         };
         setComments(prev => prev.map(c =>
             c.id === parentId ? { ...c, replies: [...(c.replies || []), reply] } : c
@@ -109,6 +105,9 @@ const CommentList = ({ storageKey = 'comments_default' }) => {
                             onEdit={handleEdit}
                             onDelete={handleDelete}
                             onReply={handleReply}
+                            liked={likedComments[comment.id]}
+                            replyingTo={replyingTo}
+                            setReplyingTo={setReplyingTo}
                         />
                     ))}
                 </div>
