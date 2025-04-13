@@ -11,6 +11,8 @@ import CreateAnnouncementPage from './pages/CreateAnnouncementPage'
 import SheltersPage from './pages/SheltersPage'
 import ShelterDetailPage from './pages/ShelterDetailPage'
 import AnimalDetailPage from "./pages/AnimalDetailPage"
+import NewsDetailPage from './pages/NewsDetailPage';
+import NewsListPage from './pages/NewsListPage';
 import Footer from './components/Footer'
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
                     <Route path="/announcements" element={<AnnouncementPage />} />
                     <Route path="/announcements/create" element={<CreateAnnouncementPage />} />
                     <Route path="/animals/:id" element={<AnimalDetailPage />} />
+                    <Route path="/news/:id" element={<NewsDetailPage />} />
+                    <Route path="/news" element={<NewsListPage />} />
                     <Route path="/shelters" element={<SheltersPage />} />
                     <Route path="/shelters/:id" element={<ShelterDetailPage />} />
                 </Routes>
