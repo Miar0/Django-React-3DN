@@ -53,6 +53,7 @@ const Carousel = () => {
         setPets(merged);
     }, []);
 
+const Carousel = () => {
     return (
         <section className="bg-[#EDF2F7] dark:bg-dark-fond py-12 mt-20">
             <div className="max-w-[1440px] mx-auto px-6 pb-14 flex flex-col justify-center">

@@ -98,7 +98,7 @@ const HomePage = () => {
             <WhyUsSection />
             <ReviewSection />
             <NewsSection />
-            
+
         </>
     );
 };

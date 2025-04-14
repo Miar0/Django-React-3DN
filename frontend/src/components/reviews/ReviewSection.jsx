@@ -1,91 +1,81 @@
-import React, {useRef, useEffect, useState} from 'react';
-import {FaChevronLeft, FaChevronRight} from 'react-icons/fa';
+import React from 'react';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import reviews from '../../data/reviews';
 import ReviewCard from './ReviewCard';
 import { Link } from 'react-router-dom';
 
-const CARD_WIDTH = 300;
-const GAP = 16;
+const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 4,
+        partialVisibilityGutter: 30,
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 640 },
+        items: 2,
+    },
+    mobile: {
+        breakpoint: { max: 640, min: 0 },
+        items: 1,
+    },
+};
+
+const CustomLeftArrow = ({ onClick }) => (
+    <button
+        onClick={onClick}
+        className="absolute -left-10 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full
+    shadow-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+    >
+        <FaChevronLeft className="text-[#202857]" />
+    </button>
+);
+
+const CustomRightArrow = ({ onClick }) => (
+    <button
+        onClick={onClick}
+        className="absolute -right-10 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full
+    shadow-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
+    >
+        <FaChevronRight className="text-[#202857]" />
+    </button>
+);
 
 const ReviewSection = () => {
-    const [index, setIndex] = useState(0);
-    const containerRef = useRef(null);
-
-    const scrollToIndex = (i) => {
-        if (containerRef.current) {
-            containerRef.current.scrollTo({
-                left: i * (CARD_WIDTH + GAP),
-                behavior: 'smooth',
-            });
-        }
-    };
-
-    useEffect(() => {
-        scrollToIndex(index);
-    }, [index]);
-
-    const handlePrev = () => {
-        setIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
-    };
-
-    const handleNext = () => {
-        setIndex((prev) => (prev + 1) % reviews.length);
-    };
-
     return (
-        <section
-            className="relative flex flex-col items-center justify-center bg-[#EDF2F7] dark:bg-dark-fond overflow-hidden pt-35 pb-44">
-            <h2 className="text-[32px] lg:text-[36px] font-semibold text-center text-[#202857] dark:text-[#C5C5C5] mb-16">
+        <section className="relative flex flex-col items-center justify-center bg-[#EDF2F7] dark:bg-dark-fond py-20 overflow-hidden rounded-lg">
+            <h2 className="text-[32px] lg:text-[36px] font-semibold text-center text-[#202857] dark:text-[#C5C5C5] mb-10">
                 Що люди думають про нас
             </h2>
 
-            <div className="relative flex flex-row items-center justify-center max-w-[1440px] mx-auto ">
-                <button
-                    onClick={handlePrev}
-                    className="absolute -left-10 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full
-                    shadow-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
-                >
-                    <FaChevronLeft className="text-[#202857]" />
-                </button>
+            <div className="relative max-w-[1440px] w-full px-6">
+                <CustomLeftArrow onClick={() => document.querySelector('.react-multi-carousel-list button[aria-label="Go to previous slide"]')?.click()} />
+                <CustomRightArrow onClick={() => document.querySelector('.react-multi-carousel-list button[aria-label="Go to next slide"]')?.click()} />
 
-                <div className="overflow-hidden">
-                    <div ref={containerRef}>
-                        <div
-                            className="flex items-center justify-center pl-4 pr-4 will-change-transform py-4 "
-                            style={{
-                                gap: `${GAP}px`,
-                                width: `${reviews.length * (CARD_WIDTH + GAP)}px`,
-                            }}
-                        >
-                            {reviews.map((review) => (
-                                <div
-                                    key={review.id}
-                                    className="flex-shrink-0"
-                                    style={{width: `${CARD_WIDTH}px`}}
-                                >
-                                    <ReviewCard review={review}/>
-                                </div>
-                            ))}
+                <Carousel
+                    responsive={responsive}
+                    infinite
+                    autoPlay
+                    autoPlaySpeed={4000}
+                    arrows={false}
+                    containerClass="carousel-container"
+                    itemClass="px-2"
+                >
+                    {reviews.map((review) => (
+                        <div key={review.id} className="px-2">
+                            <ReviewCard review={review} />
                         </div>
-                    </div>
-                </div>
-
-                <button
-                    onClick={handleNext}
-                    className="absolute -right-10 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full
-                    shadow-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
-                >
-                    <FaChevronRight className="text-[#202857]"/>
-                </button>
+                    ))}
+                </Carousel>
             </div>
 
-            {/* Кнопка "Написати відгук" */}
             <div className="flex justify-center items-center mt-14">
                 <Link to="/reviews" className="group">
                     <button
                         className="flex items-center gap-2 px-8 py-3 rounded-full border border-[--color-news-accent] text-[--color-news-accent]
-                    bg-white shadow-md transition hover:bg-[#ECEBFF] hover:scale-105 active:scale-95 focus-visible:ring-2
-                    dark:border-white dark:text-white dark:bg-transparent dark:hover:bg-white/10 cursor-pointer"
+            bg-white shadow-md transition hover:bg-[#ECEBFF] hover:scale-105 active:scale-95 focus-visible:ring-2
+            dark:border-white dark:text-white dark:bg-transparent dark:hover:bg-white/10 cursor-pointer"
                     >
                         Написати відгук
                     </button>
