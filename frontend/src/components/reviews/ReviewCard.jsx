@@ -2,7 +2,7 @@ import React from 'react';
 
 const ReviewCard = ({ review }) => {
     return (
-        <div className="w-full max-w-xs sm:max-w-sm md:max-w-[18rem] lg:max-w-[20rem] min-h-[16rem] mt-5
+        <div className="w-full max-w-xs sm:max-w-sm md:max-w-[18rem] lg:max-w-[20rem] min-h-[16rem] mt-8
             bg-[rgba(249,249,249,0.99)] dark:bg-[#1F1F2B]/75 rounded-3xl
             pt-12 pb-6 px-6 flex flex-col items-center justify-start shadow-md relative mx-auto">
 
