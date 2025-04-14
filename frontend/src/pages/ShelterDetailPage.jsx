@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import shelters from '../data/shelters';
+import DonateModal from '../components/DonateModal'; // 👈 Додай імпорт
 
 const ShelterDetailPage = () => {
     const { id } = useParams();
@@ -38,7 +39,7 @@ const ShelterDetailPage = () => {
                         <p className="text-gray-600 dark:text-gray-400">{shelter.description}</p>
                     </div>
 
-                    <div className="mt-4 flex items-center  gap-4 w-full">
+                    <div className="mt-4 flex flex-wrap gap-4 w-full">
                         <a
                             href={shelter.website ? `https://${shelter.website}` : "#"}
                             target="_blank"
@@ -54,6 +55,8 @@ const ShelterDetailPage = () => {
                         >
                             Передати тваринку
                         </Link>
+
+                        <DonateModal /> {/* 👈 Вставка модального компонента */}
                     </div>
                 </div>
             </div>
