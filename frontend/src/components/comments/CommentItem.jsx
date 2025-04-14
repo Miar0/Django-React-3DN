@@ -35,8 +35,9 @@ const CommentItem = ({ comment, onLike, onEdit, onDelete, onReply, liked, replyi
               className="w-full p-2 mb-2 rounded-md bg-gray-100 dark:bg-[#2C2C3B] dark:text-white"
           />
                     <div className="flex gap-2 mb-2">
-                        <button onClick={handleEditSave}><Check size={16} /></button>
-                        <button onClick={() => setIsEditing(false)}><X size={16} /></button>
+                        <button onClick={handleEditSave} className="cursor-pointer hover:text-blue-500"><Check size={16} /></button>
+                        <button onClick={() =>{setIsEditing(false)
+                            setEditText(comment.text)}} className="cursor-pointer hover:text-red-500"><X size={16} /></button>
                     </div>
                 </>
             ) : (
@@ -44,16 +45,16 @@ const CommentItem = ({ comment, onLike, onEdit, onDelete, onReply, liked, replyi
             )}
 
             <div className="flex gap-4 text-sm text-gray-600 dark:text-gray-400">
-                <button onClick={() => onLike(comment.id)} className="hover:text-red-500 transition">
+                <button onClick={() => onLike(comment.id)} className="hover:text-red-500 transition cursor-pointer">
                     <Heart size={16} className="inline-block mr-1" /> {comment.likes}
                 </button>
-                <button onClick={() => setIsEditing(true)} className="hover:text-blue-500 transition">
+                <button onClick={() => setIsEditing(true)} className="hover:text-blue-500 transition cursor-pointer">
                     <Pencil size={16} className="inline-block mr-1" /> Редагувати
                 </button>
-                <button onClick={() => setReplyingTo(comment.id)} className="hover:text-blue-500 transition">
+                <button onClick={() => setReplyingTo(comment.id)} className="hover:text-blue-500 transition cursor-pointer">
                     <MessageCircle size={16} className="inline-block mr-1" /> Відповісти
                 </button>
-                <button onClick={() => onDelete(comment.id)} className="hover:text-red-600 transition">
+                <button onClick={() => onDelete(comment.id)} className="hover:text-red-600 transition cursor-pointer">
                     <Trash2 size={16} className="inline-block mr-1" /> Видалити
                 </button>
             </div>
@@ -68,7 +69,7 @@ const CommentItem = ({ comment, onLike, onEdit, onDelete, onReply, liked, replyi
           />
                     <button
                         onClick={handleReplySubmit}
-                        className="mt-2 text-sm bg-blue-500 text-white px-4 py-1 rounded-full hover:bg-blue-600"
+                        className="mt-2 text-sm bg-blue-500 text-white px-4 py-1 rounded-full hover:bg-blue-600 cursor-pointer"
                     >
                         Надіслати відповідь
                     </button>

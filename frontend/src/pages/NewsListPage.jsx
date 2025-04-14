@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import news from '../data/news';
 import { Link } from 'react-router-dom';
-import SortDropdown from '../components/SortDropdown';
 import Pagination from '../components/Pagination';
-import SearchInput from '../components/SearchInput';
+import Filters from '../components/Filters';
 
 const NewsListPage = () => {
     const [sortOption, setSortOption] = useState('newest');
@@ -28,27 +27,16 @@ const NewsListPage = () => {
     const currentItems = sortedNews.slice(offset, offset + PER_PAGE);
 
     const handlePageChange = ({ selected }) => setCurrentPage(selected);
-
     return (
         <div className="min-h-screen bg-[#EDF2F7] mt-2 dark:bg-dark-fond text-[#1B1B1B] dark:text-white px-4 py-6 sm:py-8 md:py-10 max-w-[1440px] mx-auto">
             <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">Останні новини</h1>
 
-            <div className="flex flex-col sm:flex-row justify-between gap-4 mb-6 sm:items-center">
-                <SearchInput
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    placeholder="Шукати за назвою або описом..."
-                />
-                <SortDropdown
-                    selected={sortOption}
-                    onChange={setSortOption}
-                    options={[
-                        { value: 'newest', label: 'Найновіші' },
-                        { value: 'oldest', label: 'Найстаріші' },
-                        { value: 'title', label: 'По заголовку' }
-                    ]}
-                />
-            </div>
+            <Filters
+                sortOption={sortOption}
+                setSortOption={setSortOption}
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+            />
 
             <div
                 key={currentPage}

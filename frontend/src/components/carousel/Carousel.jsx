@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import pets from '../../data/pets';
 import PetCard from './PetCard';
+import {Link} from "react-router-dom";
 
 const Carousel = () => {
     const [index, setIndex] = useState(0);
@@ -48,23 +49,20 @@ const Carousel = () => {
                 </h2>
 
                 <div className="relative justify-center">
-                    {/* Стрілка вліво */}
                     <button
                         onClick={handlePrev}
-                        className="absolute -left-15 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md"
+                        className="absolute -left-10 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full
+                        shadow-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
                     >
                         <FaChevronLeft className="text-[#202857]"/>
                     </button>
-
-                    {/* Картки */}
-                    {/* Вікно-контейнер */}
                     <div
                         ref={containerRef}
                         className="relative w-full overflow-hidden"
                     >
                         {/* Лінійка з картками */}
                         <div
-                            className="flex pl-4 pr-4 will-change-transform py-4"
+                            className="flex px-4 will-change-transform py-4"
                             style={{
                                 gap: `${GAP}px`,
                                 width: `${pets.length * (CARD_WIDTH + GAP)}px`,
@@ -82,24 +80,25 @@ const Carousel = () => {
                         </div>
                     </div>
 
-
-                    {/* Стрілка вправо */}
                     <button
                         onClick={handleNext}
-                        className="absolute -right-15 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md"
+                        className="absolute -right-10 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full
+                         shadow-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
                     >
                         <FaChevronRight className="text-[#202857]"/>
                     </button>
                 </div>
 
                 <div className="flex justify-center items-center mt-10 ">
-                    <div
-                        className="relative  rounded-full p-[2px] bg-gradient-to-r from-[#4658BD] to-[#202857] custom-shadow">
+                    <Link to="/announcements" className="group">
                         <button
-                            className="flex justify-center items-center w-40 h-11 px-10 py-3 cursor-pointer bg-[#EDF2F7] dark:bg-dark-fond text-base font-semibold rounded-full text-[#202857] dark:text-white shadow-lg">
+                            className="flex items-center gap-2 px-8 py-3 rounded-full border border-[--color-news-accent] text-[--color-news-accent]
+                    bg-white shadow-md transition hover:bg-[#ECEBFF] hover:scale-105 active:scale-95 focus-visible:ring-2
+                    dark:border-white dark:text-white dark:bg-transparent dark:hover:bg-white/10 cursor-pointer"
+                        >
                             Більше
                         </button>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </section>

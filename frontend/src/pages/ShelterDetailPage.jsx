@@ -19,17 +19,24 @@ const ShelterDetailPage = () => {
 
     return (
         <div className="min-h-screen bg-[#F8FAF9] dark:bg-dark-fond px-4 py-8 md:px-12">
-            <Link to="/shelters" className="text-blue-600 hover:underline dark:text-blue-400 mb-6 block">
-                ← Повернутися до Притулків
+            <Link
+                to="/shelters"
+                className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium
+                hover:text-blue-800 dark:hover:text-blue-300 transition-all ease-in-out cursor-pointer mb-4"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Повернутися до Притулків
             </Link>
 
             <div className="bg-white dark:bg-[#1C1C2E] rounded-2xl shadow-md p-6 mb-10 grid md:grid-cols-2 gap-4">
                 <div>
                     <h2 className="text-[24px] font-bold text-[#202857] dark:text-white mb-4">{shelter.name}</h2>
                     <h3 className="font-semibold text-lg text-gray-700 dark:text-gray-300 mb-2">Інформація про притулок</h3>
-                    <p><strong>Тип:</strong> {shelter.type}</p>
-                    <p><strong>Розташування:</strong> {shelter.location}</p>
-                    {shelter.contact && <p><strong>Контакти:</strong> {shelter.contact}</p>}
+                    <p className="text-[#202857] dark:text-white"><strong>Тип:</strong> {shelter.type}</p>
+                    <p className="text-[#202857] dark:text-white"><strong>Розташування:</strong> {shelter.location}</p>
+                    {shelter.contact && <p className="text-[#202857] dark:text-white"><strong>Контакти:</strong> {shelter.contact}</p>}
                 </div>
 
                 <div className="flex flex-col justify-between">
@@ -62,7 +69,7 @@ const ShelterDetailPage = () => {
                 <h2 className="text-[20px] md:text-[24px] font-semibold text-[#202857] dark:text-white mb-4">Доступні тварини</h2>
                 {shelter.available === 0 ? (
                     <div className="bg-white dark:bg-[#1C1C2E] rounded-2xl p-6 shadow-md">
-                        <h3 className="text-lg font-semibold mb-2">Жодна тварина недоступна.</h3>
+                        <h3 className="text-lg font-semibold mb-2 text-[#202857] dark:text-white">Жодна тварина недоступна.</h3>
                         <p className="text-gray-600 dark:text-gray-300">
                             У цьому притулку немає жодної тварини, зазначеної для усиновлення.
                         </p>

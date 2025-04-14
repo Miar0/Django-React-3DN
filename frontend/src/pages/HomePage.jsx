@@ -98,6 +98,14 @@ const HomePage = () => {
             <WhyUsSection />
             <ReviewSection />
             <NewsSection />
+            <section
+                className="min-h-[calc(100vh-88px)] bg-[#EDF2F7] dark:bg-dark-fond  flex items-center justify-center relative overflow-hidden">
+                <img
+                    src={greenEllipse}
+                    alt="decorative path"
+                    width={900}
+                    height={600}
+                    className="absolute -bottom-67 -right-22 z-0"
         </>
     );
 };

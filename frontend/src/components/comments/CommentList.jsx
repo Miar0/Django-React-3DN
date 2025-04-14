@@ -69,27 +69,16 @@ const CommentList = ({ storageKey = 'comments_default' }) => {
     return (
         <div className="mt-10">
             <h2 className="text-xl font-semibold mb-4">Коментарі</h2>
-
-            {/*<SortDropdown*/}
-            {/*    selected={sortBy}*/}
-            {/*    onChange={setSortBy}*/}
-            {/*    options={[*/}
-            {/*        { value: 'newest', label: 'Найновіші' },*/}
-            {/*        { value: 'oldest', label: 'Найстаріші' },*/}
-            {/*        { value: 'author', label: 'За автором' }*/}
-            {/*    ]}*/}
-            {/*/>*/}
-
             <div className="mt-4">
-        <textarea
-            value={commentText}
-            onChange={(e) => setCommentText(e.target.value)}
-            placeholder="Залиште свій коментар..."
-            className="w-full p-3 rounded-md bg-gray-100 dark:bg-[#2C2C3B] dark:text-white"
-        />
+            <textarea
+                value={commentText}
+                onChange={(e) => setCommentText(e.target.value)}
+                placeholder="Залиште свій коментар..."
+                className="w-full p-3 rounded-md bg-gray-100 dark:bg-[#2C2C3B] dark:text-white"
+            />
                 <button
                     onClick={handleAddComment}
-                    className="mt-2 bg-[#2563EB] cursor-pointer text-white px-6 py-2 rounded-full hover:bg-[#1E40AF] transition"
+                    className="mt-2 bg-[#2563EB] text-white px-6 py-2 rounded-full hover:bg-[#1E40AF] transition cursor-pointer"
                 >
                     Надіслати
                 </button>

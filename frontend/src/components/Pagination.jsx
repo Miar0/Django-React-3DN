@@ -9,12 +9,12 @@ const Pagination = ({ pageCount, onPageChange }) => {
                 pageCount={pageCount}
                 onPageChange={onPageChange}
                 previousLabel={
-                    <div className="w-full h-full  flex justify-center items-center">
+                    <div className="w-full h-full  flex justify-center items-center dark:text-white">
                         <FaChevronLeft size={14} />
                     </div>
                 }
                 nextLabel={
-                    <div className="w-full h-full  flex justify-center items-center">
+                    <div className="w-full h-full  flex justify-center items-center dark:text-white">
                         <FaChevronRight size={14} />
                     </div>
                 }
