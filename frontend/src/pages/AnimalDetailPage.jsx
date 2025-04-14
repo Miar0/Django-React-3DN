@@ -1,13 +1,17 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getPetById } from '../utils/storage';
+import pets from '../data/pets';
+import { getPetsFromStorage } from '../utils/storage';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const AnimalDetailPage = () => {
     const { id } = useParams();
-    const pet = getPetById(id);
+
+    const localPets = getPetsFromStorage() || [];
+    const allPets = [...localPets, ...pets];
+    const pet = allPets.find((p) => p.id === Number(id));
 
     if (!pet) {
         return (
@@ -38,7 +42,6 @@ const AnimalDetailPage = () => {
                 </svg>
                 Повернутися до оголошень
             </Link>
-
 
             <div className="flex flex-col md:flex-row gap-10 bg-white dark:bg-[#1C1C2E] rounded-3xl shadow-md p-6">
                 <div className="w-full md:w-1/2">
