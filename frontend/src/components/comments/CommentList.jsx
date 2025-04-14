@@ -89,7 +89,7 @@ const CommentList = ({ storageKey = 'comments_default' }) => {
         />
                 <button
                     onClick={handleAddComment}
-                    className="mt-2 bg-[#2563EB] text-white px-6 py-2 rounded-full hover:bg-[#1E40AF] transition"
+                    className="mt-2 bg-[#2563EB] cursor-pointer text-white px-6 py-2 rounded-full hover:bg-[#1E40AF] transition"
                 >
                     Надіслати
                 </button>
