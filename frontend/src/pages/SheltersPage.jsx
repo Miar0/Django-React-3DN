@@ -4,7 +4,7 @@ import SearchInput from '../components/SearchInput';
 import SortDropdown from '../components/SortDropdown';
 import shelters from '../data/shelters';
 
-const SheltersPage = () => {
+const  SheltersPage = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [sortOption, setSortOption] = useState('');
 
@@ -48,8 +48,8 @@ const SheltersPage = () => {
                         <h3 className="text-xl font-semibold text-[#202857] dark:text-white mb-2">
                             {shelter.name}
                         </h3>
-                        <p><span className="font-semibold">Тип:</span> {shelter.type}</p>
-                        <p><span className="font-semibold">Розташування:</span> {shelter.location}</p>
+                        <p className="text-[#202857] dark:text-white"><span className="font-semibold">Тип:</span> {shelter.type}</p>
+                        <p className="text-[#202857] dark:text-white"><span className="font-semibold">Розташування:</span> {shelter.location}</p>
                         {shelter.website && (
                             <p className="text-blue-500 underline">
                                 <a href={`https://${shelter.website}`} target="_blank" rel="noreferrer">

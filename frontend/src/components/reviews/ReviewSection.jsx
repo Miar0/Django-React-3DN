@@ -1,7 +1,8 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import React, {useRef, useEffect, useState} from 'react';
+import {FaChevronLeft, FaChevronRight} from 'react-icons/fa';
 import reviews from '../../data/reviews';
 import ReviewCard from './ReviewCard';
+import { Link } from 'react-router-dom';
 
 const CARD_WIDTH = 300;
 const GAP = 16;
@@ -32,7 +33,8 @@ const ReviewSection = () => {
     };
 
     return (
-        <section className="relative flex flex-col items-center justify-center bg-[#EDF2F7] dark:bg-dark-fond overflow-hidden pt-35 pb-44">
+        <section
+            className="relative flex flex-col items-center justify-center bg-[#EDF2F7] dark:bg-dark-fond overflow-hidden pt-35 pb-44">
             {/* Заголовок */}
             <h2 className="text-[32px] lg:text-[36px] font-semibold text-center text-[#202857] dark:text-[#C5C5C5] mb-16">
                 Що люди думають про нас
@@ -45,7 +47,7 @@ const ReviewSection = () => {
                     onClick={handlePrev}
                     className="absolute -left-10 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md cursor-pointer"
                 >
-                    <FaChevronLeft className="text-[#202857]" />
+                    <FaChevronLeft className="text-[#202857]"/>
                 </button>
 
                 {/* Обгортка для скролу */}
@@ -62,9 +64,9 @@ const ReviewSection = () => {
                                 <div
                                     key={review.id}
                                     className="flex-shrink-0"
-                                    style={{ width: `${CARD_WIDTH}px` }}
+                                    style={{width: `${CARD_WIDTH}px`}}
                                 >
-                                    <ReviewCard review={review} />
+                                    <ReviewCard review={review}/>
                                 </div>
                             ))}
                         </div>
@@ -76,21 +78,21 @@ const ReviewSection = () => {
                     onClick={handleNext}
                     className="absolute -right-7 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md cursor-pointer"
                 >
-                    <FaChevronRight className="text-[#202857]" />
+                    <FaChevronRight className="text-[#202857]"/>
                 </button>
             </div>
 
             {/* Кнопка "Написати відгук" */}
             <div className="flex justify-center items-center mt-14">
-                <div className="relative rounded-full p-[2px] bg-gradient-to-r from-[#4658BD] to-[#202857] custom-shadow">
+                <Link to="/reviews" className="group">
                     <button
-                        className="flex justify-center items-center px-10 py-3 h-11 w-48 text-base
-                         font-semibold rounded-full cursor-pointer bg-[#EDF2F7] dark:bg-dark-fond
-                         text-[#202857] dark:text-white shadow-lg whitespace-nowrap"
+                        className="flex items-center gap-2 px-8 py-3 rounded-full border border-[--color-news-accent] text-[--color-news-accent]
+                    bg-white shadow-md transition hover:bg-[#ECEBFF] hover:scale-105 active:scale-95 focus-visible:ring-2
+                    dark:border-white dark:text-white dark:bg-transparent dark:hover:bg-white/10 cursor-pointer"
                     >
                         Написати відгук
                     </button>
-                </div>
+                </Link>
             </div>
         </section>
     );

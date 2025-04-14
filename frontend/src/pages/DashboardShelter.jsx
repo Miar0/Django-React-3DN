@@ -93,13 +93,13 @@ const DashboardShelter = () => {
                             <div className="flex justify-between items-center mt-4 gap-3">
                                 <Link
                                     to={`/edit/${pet.id}`}
-                                    className="text-sm bg-yellow-400 text-white px-4 py-1 rounded-full hover:bg-yellow-500 transition"
+                                    className="text-sm bg-yellow-400 text-white px-4 py-1 rounded-full hover:bg-yellow-600 transition"
                                 >
                                     Редагувати
                                 </Link>
                                 <button
                                     onClick={() => handleDelete(pet.id)}
-                                    className="text-sm bg-red-500 text-white px-4 py-1 rounded-full hover:bg-red-600 transition"
+                                    className="text-sm bg-red-500 text-white px-4 py-1 rounded-full hover:bg-red-800 transition cursor-pointer"
                                 >
                                     Видалити
                                 </button>

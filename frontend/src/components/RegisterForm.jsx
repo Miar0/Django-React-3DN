@@ -1,40 +1,50 @@
-const RegisterForm = () => {
+const RegisterForm = ({ switchToLogin }) => {
     return (
-        <form className="space-y-6 py-9 px-18 w-full text-white">
+        <form onSubmit={switchToLogin} className="space-y-6 py-9 px-18 w-full text-white">
             <h2 className="text-2xl font-semibold mb-7 text-black dark:text-white">Створіть свій акаунт</h2>
             <div>
                 <label className="block mb-1 text-black dark:text-white">First Name</label>
                 <input
                     className="w-full px-4 py-2 rounded-md bg-[#D9D9D9]/20 placeholder-white/50 focus:outline-none
                     ring ring-[#00000026] dark:ring-0"
-                    placeholder="Anna"/>
+                    placeholder="Anna"
+                    required
+                />
             </div>
             <div>
                 <label className="block mb-1 text-black dark:text-white">Last Name</label>
                 <input
                     className="w-full px-4 py-2 rounded-md bg-[#D9D9D9]/20 placeholder-white/50 focus:outline-none
                     ring ring-[#00000026] dark:ring-0"
-                    placeholder="Last Name"/>
+                    placeholder="Last Name"
+                    required
+                />
             </div>
             <div>
                 <label className="block mb-1 text-black dark:text-white">Email</label>
                 <input type="email"
                        className="w-full px-4 py-2 rounded-md bg-[#D9D9D9]/20 placeholder-white/50 focus:outline-none
                        ring ring-[#00000026] dark:ring-0"
-                       placeholder="Email"/>
+                       placeholder="Email"
+                       required
+                />
             </div>
             <h2 className="text-2xl font-semibold mb-6 mt-9 text-black dark:text-white">Password</h2>
             <div className="mb-10 space-y-3">
                 <input type="password" className="w-full px-4 py-2 rounded-md bg-[#D9D9D9]/20 placeholder-white/50 focus:outline-none
                 ring ring-[#00000026] dark:ring-0"
-                       placeholder="Your Password"/>
+                       placeholder="Your Password"
+                       required
+                />
 
                 <input type="password" className="w-full px-4 py-2 rounded-md bg-[#D9D9D9]/20 placeholder-white/50 focus:outline-nonee
                 ring ring-[#00000026] dark:ring-0"
-                       placeholder="Confirm Password"/>
+                       placeholder="Confirm Password"
+                       required
+                />
             </div>
             <button type="submit"
-                    className="btn-primary w-full bg-blue-700 p-2 outline-none rounded-lg cursor-pointer">Авторизуватися
+                    className="btn-primary w-full bg-blue-700  p-2 outline-none rounded-lg cursor-pointer hover:bg-blue-800">Авторизуватися
             </button>
 
             <div className="flex items-center justify-center">
@@ -90,7 +100,8 @@ const RegisterForm = () => {
                 <p className="text-sm font-light text-black dark:text-white">
                     Вже є обліковий запис?{" "}
                     <button
-                        className="text-blue-500 hover:underline hover:cursor-pointer"
+                        onClick={switchToLogin}
+                        className="text-blue-400 hover:text-blue-400/60 hover:underline cursor-pointer"
                     >
                         Увійти
                     </button>

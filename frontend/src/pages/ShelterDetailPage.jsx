@@ -27,9 +27,9 @@ const ShelterDetailPage = () => {
                 <div>
                     <h2 className="text-[24px] font-bold text-[#202857] dark:text-white mb-4">{shelter.name}</h2>
                     <h3 className="font-semibold text-lg text-gray-700 dark:text-gray-300 mb-2">Інформація про притулок</h3>
-                    <p><strong>Тип:</strong> {shelter.type}</p>
-                    <p><strong>Розташування:</strong> {shelter.location}</p>
-                    {shelter.contact && <p><strong>Контакти:</strong> {shelter.contact}</p>}
+                    <p className="text-[#202857] dark:text-white"><strong>Тип:</strong> {shelter.type}</p>
+                    <p className="text-[#202857] dark:text-white"><strong>Розташування:</strong> {shelter.location}</p>
+                    {shelter.contact && <p className="text-[#202857] dark:text-white"><strong>Контакти:</strong> {shelter.contact}</p>}
                 </div>
 
                 <div className="flex flex-col justify-between">
@@ -62,7 +62,7 @@ const ShelterDetailPage = () => {
                 <h2 className="text-[20px] md:text-[24px] font-semibold text-[#202857] dark:text-white mb-4">Доступні тварини</h2>
                 {shelter.available === 0 ? (
                     <div className="bg-white dark:bg-[#1C1C2E] rounded-2xl p-6 shadow-md">
-                        <h3 className="text-lg font-semibold mb-2">Жодна тварина недоступна.</h3>
+                        <h3 className="text-lg font-semibold mb-2 text-[#202857] dark:text-white">Жодна тварина недоступна.</h3>
                         <p className="text-gray-600 dark:text-gray-300">
                             У цьому притулку немає жодної тварини, зазначеної для усиновлення.
                         </p>
