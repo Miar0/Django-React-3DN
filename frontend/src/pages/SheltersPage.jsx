@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import SearchInput from '../components/SearchInput';
-import SortDropdown from '../components/SortDropdown';
 import shelters from '../data/shelters';
+import Filters from '../components/Filters';
 
 const  SheltersPage = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [sortOption, setSortOption] = useState('');
+    const [sortOption, setSortOption] = useState('newest');
 
     const filtered = shelters.filter(shelter =>
         shelter.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -20,23 +19,16 @@ const  SheltersPage = () => {
     });
 
     return (
-        <div className="min-h-screen bg-[#F8FAF9] dark:bg-dark-fond py-10 px-4 md:px-12">
-            <h1 className="text-[28px] md:text-[36px] font-bold text-[#1B1B1B] dark:text-white mb-8">
-                Притулки для тварин
-            </h1>
+        <div className="min-h-screen bg-[#EDF2F7] mt-2 dark:bg-dark-fond text-[#1B1B1B] dark:text-white px-4 py-6 sm:py-8 md:py-10 max-w-[1440px] mx-auto">
+            <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">Притулки для тварин</h1>
 
-            {/* Фільтри */}
-            <div className="flex flex-col md:flex-row gap-4 md:items-center md:justify-between mb-8 bg-white dark:bg-[#1C1C2E] p-4 rounded-xl shadow-sm">
-                <SearchInput
-                    placeholder="Шукати за назвою або розташуванням"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                <SortDropdown
-                    selected={sortOption}
-                    onChange={setSortOption}
-                />
-            </div>
+            <Filters
+                sortOption={sortOption}
+                setSortOption={setSortOption}
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+            />
+
 
             {/* Картки притулків */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

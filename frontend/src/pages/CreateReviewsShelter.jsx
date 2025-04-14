@@ -36,11 +36,15 @@ const CreateReviewsShelter = () => {
                 <button
                     type="button"
                     onClick={() => navigate(-1)}
-                    className="text-[#2563EB] dark:text-blue-400 underline text-sm cursor-pointer"
+                    className="flex items-center gap-2 text-[#2563EB] dark:text-blue-400 font-medium hover:text-[#1D4ED8] dark:hover:text-blue-500 transition-all ease-in-out cursor-pointer"
                 >
-                    ← Повернутися назад
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Повернутися назад
                 </button>
             </div>
+
 
             <h1 className="text-[28px] md:text-[36px] font-bold text-[#1B1B1B] dark:text-white mb-8 text-center">
                 Написати відгук про притулок

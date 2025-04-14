@@ -35,22 +35,19 @@ const ReviewSection = () => {
     return (
         <section
             className="relative flex flex-col items-center justify-center bg-[#EDF2F7] dark:bg-dark-fond overflow-hidden pt-35 pb-44">
-            {/* Заголовок */}
             <h2 className="text-[32px] lg:text-[36px] font-semibold text-center text-[#202857] dark:text-[#C5C5C5] mb-16">
                 Що люди думають про нас
             </h2>
 
-            {/* Карусель */}
             <div className="relative flex flex-row items-center justify-center max-w-[1440px] mx-auto ">
-                {/* Стрілка вліво */}
                 <button
                     onClick={handlePrev}
-                    className="absolute -left-10 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md cursor-pointer"
+                    className="absolute -left-10 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full
+                    shadow-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
                 >
-                    <FaChevronLeft className="text-[#202857]"/>
+                    <FaChevronLeft className="text-[#202857]" />
                 </button>
 
-                {/* Обгортка для скролу */}
                 <div className="overflow-hidden">
                     <div ref={containerRef}>
                         <div
@@ -73,10 +70,10 @@ const ReviewSection = () => {
                     </div>
                 </div>
 
-                {/* Стрілка вправо */}
                 <button
                     onClick={handleNext}
-                    className="absolute -right-7 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow-md cursor-pointer"
+                    className="absolute -right-10 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full
+                    shadow-md cursor-pointer transition-transform duration-300 ease-in-out hover:scale-110"
                 >
                     <FaChevronRight className="text-[#202857]"/>
                 </button>

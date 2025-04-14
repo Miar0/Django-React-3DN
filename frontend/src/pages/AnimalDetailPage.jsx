@@ -29,9 +29,16 @@ const AnimalDetailPage = () => {
 
     return (
         <div className="min-h-screen bg-[#F8FAF9] dark:bg-dark-fond px-4 py-10 md:px-12 max-w-[1440px] mx-auto">
-            <Link to="/announcements" className="text-blue-600 dark:text-blue-400 hover:underline mb-6 block">
-                ← Повернутися до оголошень
+            <Link
+                to="/announcements"
+                className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium hover:text-blue-800 dark:hover:text-blue-300 transition-all ease-in-out cursor-pointer mb-4"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Повернутися до оголошень
             </Link>
+
 
             <div className="flex flex-col md:flex-row gap-10 bg-white dark:bg-[#1C1C2E] rounded-3xl shadow-md p-6">
                 <div className="w-full md:w-1/2">

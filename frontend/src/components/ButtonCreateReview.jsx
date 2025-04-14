@@ -8,7 +8,8 @@ const ButtonCreate = () => {
     return (
         <button
             onClick={() => navigate('/reviews/create')}
-            className="flex items-center gap-2 px-4 py-2 border border-[#07006D] rounded-full text-[#07006D] font-medium hover:bg-[#f4f4ff] transition whitespace-nowrap"
+            className="flex items-center cursor-pointer gap-2 px-4 py-2 border dark:text-blue-100 dark:border-white/20
+             dark:hover:bg-gray-700 border-[#07006D] text-[#07006D] rounded-full hover:bg-gray-50 transition whitespace-nowrap"
         >
             <HiOutlinePlus/>
             Залишити відгук

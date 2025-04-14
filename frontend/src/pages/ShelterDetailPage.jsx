@@ -19,8 +19,15 @@ const ShelterDetailPage = () => {
 
     return (
         <div className="min-h-screen bg-[#F8FAF9] dark:bg-dark-fond px-4 py-8 md:px-12">
-            <Link to="/shelters" className="text-blue-600 hover:underline dark:text-blue-400 mb-6 block">
-                ← Повернутися до Притулків
+            <Link
+                to="/shelters"
+                className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium
+                hover:text-blue-800 dark:hover:text-blue-300 transition-all ease-in-out cursor-pointer mb-4"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Повернутися до Притулків
             </Link>
 
             <div className="bg-white dark:bg-[#1C1C2E] rounded-2xl shadow-md p-6 mb-10 grid md:grid-cols-2 gap-4">
