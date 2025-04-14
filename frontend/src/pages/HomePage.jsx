@@ -95,7 +95,6 @@ const HomePage = () => {
             </section>
 
             <Carousel />
-            <WhyUsSection />
             <ReviewSection />
             <NewsSection />
 
