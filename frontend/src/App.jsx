@@ -17,6 +17,8 @@ import DashboardShelter from './pages/DashboardShelter';
 import Footer from './components/Footer'
 import ResetPasswordForm from "./components/ResetPasswordForm";
 import useDisableScroll from './hooks/useDisableScroll'
+import ReviewsPage from './pages/ReviewsShelter'
+import CreateReviewsShelter from "./pages/CreateReviewsShelter";
 
 function App() {
     const [modalType, setModalType] = useState(null)
@@ -47,6 +49,8 @@ function App() {
                     <Route path="/shelters" element={<SheltersPage />} />
                     <Route path="/shelters/:id" element={<ShelterDetailPage />} />
                     <Route path="/dashboard/shelter" element={<DashboardShelter />} />
+                    <Route path="/reviews" element={<ReviewsPage />} />
+                    <Route path="/reviews/create" element={<CreateReviewsShelter />} />
                 </Routes>
                 <Modal isOpen={modalType !== null} onClose={closeModal}>
                     {modalType === 'login' && (

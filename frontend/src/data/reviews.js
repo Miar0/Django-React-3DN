@@ -9,37 +9,29 @@ const reviews = [
         name: "Анна",
         avatar: pointAnna,
         rating: 4,
+        comment: "Дуже зручно було знайти тваринку. Дякую за платформу!"
     },
     {
         id: 2,
         name: "Олексій",
         avatar: pointOleksiy,
         rating: 5,
+        comment: "Все пройшло чудово! Дуже вдячний команді за допомогу."
     },
     {
         id: 3,
         name: "Галина",
         avatar: pointGalina,
         rating: 5,
+        comment: "Прекрасний сервіс! Дуже зручно користуватись сайтом."
     },
     {
         id: 4,
         name: "Ігор",
-        avatar:pointIhor,
+        avatar: pointIhor,
         rating: 5,
-    },
-    // {
-    //     id: 5,
-    //     name: "Галина",
-    //     avatar: "https://randomuser.me/api/portraits/women/75.jpg",
-    //     rating: 6,
-    // },
-    // {
-    //     id: 6,
-    //     name: "Ігор",
-    //     avatar: "https://randomuser.me/api/portraits/men/45.jpg",
-    //     rating: 7,
-    // },
+        comment: "Знайшов чудового котика! Все швидко та просто."
+    }
 ];
 
 export default reviews;

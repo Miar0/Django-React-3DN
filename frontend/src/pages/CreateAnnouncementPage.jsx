@@ -81,7 +81,7 @@ const CreateAnnouncementPage = () => {
                 <button
                     type="button"
                     onClick={() => navigate(-1)}
-                    className="text-[#2563EB] dark:text-blue-400 underline text-sm"
+                    className="text-[#2563EB] dark:text-blue-400 underline text-sm cursor-pointer"
                 >
                     ← Повернутися назад
                 </button>
@@ -103,7 +103,8 @@ const CreateAnnouncementPage = () => {
                         accept="image/*"
                         multiple
                         onChange={handleImageAdd}
-                        className="w-full text-sm text-gray-500 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 border rounded-md p-2"
+                        className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white cursor-pointer hover:ring-1 active:ring-1"
+                        required
                     />
                     {selectedImages.length > 0 && (
                         <div
@@ -140,7 +141,8 @@ const CreateAnnouncementPage = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white"
+                        required
+                        className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white outline-none focus:ring-1"
                     />
                 </div>
 
@@ -153,6 +155,7 @@ const CreateAnnouncementPage = () => {
                             placeholder="Оберіть або введіть"
                             isClearable
                             isSearchable
+                            required
                             className="react-select-container"
                             classNamePrefix="react-select"
                             styles={{
@@ -171,7 +174,8 @@ const CreateAnnouncementPage = () => {
                             name="gender"
                             value={formData.gender}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white"
+                            required
+                            className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white cursor-pointer outline-none focus:ring-1"
                         >
                             <option value="">Оберіть</option>
                             <option value="Самець">Самець</option>
@@ -188,7 +192,8 @@ const CreateAnnouncementPage = () => {
                             name="age"
                             value={formData.age}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white"
+                            required
+                            className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white outline-none focus:ring-1"
                         />
                     </div>
                     <div>
@@ -198,7 +203,7 @@ const CreateAnnouncementPage = () => {
                             name="breed"
                             value={formData.breed}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white"
+                            className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white outline-none focus:ring-1"
                         />
                     </div>
                 </div>
@@ -210,7 +215,8 @@ const CreateAnnouncementPage = () => {
                             name="healthStatus"
                             value={formData.healthStatus}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white"
+                            required
+                            className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white cursor-pointer outline-none focus:ring-1"
                         >
                             <option value="">Оберіть</option>
                             <option value="Здоровий">Здоровий</option>
@@ -223,7 +229,8 @@ const CreateAnnouncementPage = () => {
                             name="contact"
                             value={formData.contact}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white"
+                            required
+                            className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white cursor-pointer outline-none focus:ring-1"
                         >
                             <option value="">Оберіть</option>
                             {shelters.map((shelter) => (
@@ -243,7 +250,7 @@ const CreateAnnouncementPage = () => {
                         onChange={handleChange}
                         rows={4}
                         placeholder="Розкажіть про тваринку..."
-                        className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white resize-none overflow-y-auto max-h-40"
+                        className="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-700 text-black dark:text-white resize-none overflow-y-auto max-h-40 outline-none focus:ring-1"
                     ></textarea>
                 </div>
 

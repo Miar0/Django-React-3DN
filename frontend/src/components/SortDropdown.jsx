@@ -28,8 +28,8 @@ const SortDropdown = ({ options = defaultOptions, onChange, selected }) => {
                         <div
                             key={option.value}
                             className={`px-4 py-2 cursor-pointer hover:bg-gray-300/20 text-sm ${
-                                selected === option.value ? 'font-semibold' +
-                                    ' text-green-400' : ''
+                                selected === option.value ? 'font-semibold ' +
+                                    'text-green-400' : 'dark:text-white'
                             }`}
                             onClick={() => {
                                 onChange(option.value)
