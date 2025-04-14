@@ -57,8 +57,8 @@ const DonateModal = () => {
   return (
     <>
       <button
-        onClick={toggleModal} // Викликає відкриття модального вікна
-        className="bg-[#E5E7EB] text-black py-2 px-4 rounded-full hover:bg-[#D1D5DB] transition ml-auto flex items-center justify-center"
+        onClick={toggleModal}
+        className="bg-[#E5E7EB] cursor-pointer text-black py-2 px-4 rounded-full hover:bg-[#D1D5DB] transition ml-auto flex items-center justify-center"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

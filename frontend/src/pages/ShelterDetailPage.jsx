@@ -1,11 +1,20 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import shelters from '../data/shelters';
+import pets from '../data/pets';
+import PetCard from '../components/carousel/PetCard';
+import { getPetsFromStorage } from '../utils/storage';
 import DonateModal from '../components/DonateModal'; // 👈 Додай імпорт
+
 
 const ShelterDetailPage = () => {
     const { id } = useParams();
     const shelter = shelters.find(s => s.id === Number(id));
+
+    const localPets = getPetsFromStorage() || [];
+    const allPets = [...localPets, ...pets];
+
+    const shelterPets = allPets.filter(p => p.shelterId === shelter?.id);
 
     if (!shelter) {
         return (
@@ -46,7 +55,8 @@ const ShelterDetailPage = () => {
                         <p className="text-gray-600 dark:text-gray-400">{shelter.description}</p>
                     </div>
 
-                    <div className="mt-4 flex flex-wrap gap-4 w-full">
+
+                    <div className="mt-4 flex items-center gap-4 w-full">
                         <a
                             href={shelter.website ? `https://${shelter.website}` : "#"}
                             target="_blank"
@@ -63,14 +73,14 @@ const ShelterDetailPage = () => {
                             Передати тваринку
                         </Link>
 
-                        <DonateModal /> {/* 👈 Вставка модального компонента */}
+                        <DonateModal />
                     </div>
                 </div>
             </div>
 
             <div>
                 <h2 className="text-[20px] md:text-[24px] font-semibold text-[#202857] dark:text-white mb-4">Доступні тварини</h2>
-                {shelter.available === 0 ? (
+                {shelterPets.length === 0 ? (
                     <div className="bg-white dark:bg-[#1C1C2E] rounded-2xl p-6 shadow-md">
                         <h3 className="text-lg font-semibold mb-2 text-[#202857] dark:text-white">Жодна тварина недоступна.</h3>
                         <p className="text-gray-600 dark:text-gray-300">
@@ -82,7 +92,9 @@ const ShelterDetailPage = () => {
                     </div>
                 ) : (
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div className="text-gray-500 dark:text-gray-300">[тут буде список тварин]</div>
+                        {shelterPets.map((pet) => (
+                            <PetCard key={pet.id} pet={pet} />
+                        ))}
                     </div>
                 )}
             </div>

@@ -1,102 +1,82 @@
-import dogImg from '../assets/images/dogs.png';
-import catImg from '../assets/images/cat.png';
-import hamsterImg from  '../assets/images/hamster.png';
-import dogJack  from '../assets/images/dogJack.png';
-import catM  from '../assets/images/catM.png';
-import hamsterM  from '../assets/images/hamsterM.png';
-import dogLabrador  from '../assets/images/dogLabrador.png';
-
+import catImg from '../assets/images/catM.png';
+import dogImg from '../assets/images/dogJack.png';
+import hamsterImg from '../assets/images/hamsterM.png';
+import dogLabrador from '../assets/images/dogLabrador.png';
+import dogImg2 from '../assets/images/dogs.png';
+import catImg2 from '../assets/images/cat.png';
 
 const pets = [
     {
         id: 1,
-        name: "Собака Джек",
-        type: "Собака",
-        image: dogJack,
+        name: "Мурка",
+        type: "Кіт",
+        age: "3 роки",
+        gender: "Самка",
+        healthStatus: "Здорова",
+        description: "Добра киця, яка любить бавитись і муркотіти біля людей.",
+        contact: "shelter@petlink.ua",
+        shelterId: 986,
+        images: [catImg],
     },
     {
         id: 2,
-        name: "Котик Мурчик",
-        type: "Кіт",
-        image: catM,
+        name: "Джек",
+        type: "Собака",
+        age: "2 роки",
+        gender: "Самець",
+        healthStatus: "Потребує лікування",
+        description: "Активний песик, який шукає надійного друга.",
+        contact: "dogshelter@petlink.ua",
+        shelterId: 808,
+        images: [dogImg],
     },
     {
         id: 3,
-        name: "Хом’як Пух",
+        name: "Пух",
         type: "Хом'як",
-        image: hamsterM,
+        age: "6 місяців",
+        gender: "Самець",
+        healthStatus: "Здоровий",
+        description: "Маленький хом'як, ідеальний для сім’ї з дітьми.",
+        contact: "hamsterhouse@petlink.ua",
+        shelterId: 395,
+        images: [hamsterImg],
     },
     {
         id: 4,
-        name: "Собака Бім",
+        name: "Лаки",
         type: "Собака",
-        image: dogLabrador,
+        age: "4 роки",
+        gender: "Самець",
+        healthStatus: "Здоровий",
+        description: "Доброзичливий лабрадор, обожнює прогулянки та дітей.",
+        contact: "labradorrescue@petlink.ua",
+        shelterId: 615,
+        images: [dogLabrador],
     },
-
     {
         id: 5,
-        name: "Котик Мурчик",
-        type: "Кіт",
-        image: catM,
+        name: "Сніжинка",
+        type: "Кішка",
+        age: "1 рік",
+        gender: "Самка",
+        healthStatus: "Здорова",
+        description: "Мила білосніжна киця з блакитними очима, дуже ніжна.",
+        contact: "catlover@petlink.ua",
+        shelterId: 408,
+        images: [catImg2],
     },
     {
         id: 6,
-        name: "Собака Лабрадор",
-        image: dogLabrador,
-    },
-    {
-        id: 7,
-        name: "Хом’як Пух",
-        type: "Хом'як",
-        image: hamsterM,
-    },
-    {
-        id: 8,
-        name: "Собака Бім",
+        name: "Барон і Бірчик",
         type: "Собака",
-        image: dogLabrador,
-    },
-    {
-        id: 9,
-        name: "Котик Мурчик",
-        type: "Кіт",
-        image: catM,
-    },
-    {
-        id: 10,
-        name: "Хом’як Пух",
-        type: "Хом'як",
-        image: hamsterM,
-    },
-    {
-        id: 11,
-        name: "Собака Бім",
-        type: "Собака",
-        image: dogLabrador,
-    },
-
-    {
-        id: 12,
-        name: "Котик Мурчик",
-        type: "Кіт",
-        image: catM,
-    },
-    {
-        id: 13,
-        name: "Собака Лабрадор",
-        image: dogLabrador,
-    },
-    {
-        id: 14,
-        name: "Хом’як Пух",
-        type: "Хом'як",
-        image: hamsterM,
-    },
-    {
-        id: 15,
-        name: "Собака Бім",
-        type: "Собака",
-        image: dogLabrador,
+        age: "5 років",
+        gender: "Самець",
+        healthStatus: "Потребує лікування",
+        description: "Дорослі собаки з великим серцем, врятовані з вулиці.",
+        contact: "baronhome@petlink.ua",
+        shelterId: 369,
+        images: [dogImg2],
     },
 ];
 
