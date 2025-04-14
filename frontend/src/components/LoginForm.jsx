@@ -1,8 +1,9 @@
 import CheckboxWithLabel from '../components/Checkbox'
 
-const LoginForm = () => {
+const LoginForm = ({ switchToReset, switchToClose, switchToRegister }) => {
+
     return (
-        <form className="space-y-6 py-9 px-18 w-full text-white">
+        <form onSubmit={switchToClose} className="space-y-6 py-9 px-18 w-full text-white">
             <div className="relative">
                 <label className="block mb-1 text-black dark:text-white">Email</label>
 
@@ -11,6 +12,7 @@ const LoginForm = () => {
                     className="w-full pl-4 py-2 rounded-md bg-[#D9D9D9]/20 placeholder-white/50 focus:outline-none
                     ring ring-[#00000026] dark:ring-0"
                     placeholder="example@gmail.com"
+                    required
                 />
 
                 <div className="absolute top-8 right-1 pointer-events-none">
@@ -34,6 +36,7 @@ const LoginForm = () => {
                     className="w-full pl-4 py-2 rounded-md bg-[#D9D9D9]/20 placeholder-white/50 focus:outline-none
                     ring ring-[#00000026] dark:ring-0"
                     placeholder="Your Password"
+                    required
                 />
                 <div className="absolute top-10 right-2">
                     <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +48,7 @@ const LoginForm = () => {
             </div>
 
             <div className="flex flex-row items-center justify-between text-sm">
-                <label className="flex items-center justify-center space-x-2">
+                <label className="flex items-center justify-center space-x-2 cursor-pointer">
                     <div className="flex items-center justify-center ">
                         <CheckboxWithLabel/>
                     </div>
@@ -57,7 +60,8 @@ const LoginForm = () => {
 
                 <button
                     type="button"
-                    className="font-medium text-md text-[#0037FF] hover:underline"
+                    onClick={switchToReset}
+                    className="font-medium text-md text-blue-400 hover:text-blue-400/60 hover:underline cursor-pointer"
                 >
                     Забули пароль?
                 </button>
@@ -65,7 +69,7 @@ const LoginForm = () => {
 
             <button
                 type="submit"
-                className="w-full bg-blue-700 p-2 rounded-lg my-8 text-white hover:bg-blue-800 transition hover:cursor-pointer"
+                className="w-full bg-blue-700 p-2 rounded-lg my-8 text-white hover:bg-blue-800 transition cursor-pointer"
             >
                 Увійти
             </button>
@@ -123,9 +127,10 @@ const LoginForm = () => {
                 <p className="text-sm font-light dark:text-white text-black">
                     Немає облікового запису?{" "}
                     <button
-                        className="text-[#0037FF] hover:underline hover:cursor-pointer"
+                        onClick={switchToRegister}
+                        className="text-blue-400 hover:text-blue-400/60 hover:underline cursor-pointer"
                     >
-                        Авторизуватися
+                        Зареєструватися
                     </button>
                 </p>
             </div>

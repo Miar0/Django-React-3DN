@@ -1,7 +1,7 @@
 import Header from './components/Header'
 import HomePage from './pages/HomePage'
 import Layout from './components/Layout'
-import { useState } from 'react'
+import {useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Modal from './components/Modal'
 import LoginForm from './components/LoginForm'
@@ -15,18 +15,27 @@ import NewsDetailPage from './pages/NewsDetailPage';
 import NewsListPage from './pages/NewsListPage';
 import DashboardShelter from './pages/DashboardShelter';
 import Footer from './components/Footer'
+import ResetPasswordForm from "./components/ResetPasswordForm";
+import useDisableScroll from './hooks/useDisableScroll'
 
 function App() {
     const [modalType, setModalType] = useState(null)
 
     const closeModal = () => setModalType(null)
+    useDisableScroll(modalType !== null)
 
     return (
         <Router>
             <Layout>
                <Header
-                  onLoginOpen={() => setModalType('login')}
-                  onRegisterOpen={() => setModalType('register')}
+                   onLoginOpen={() => {
+                       window.scrollTo({ top: 0, behavior: 'smooth' });
+                       setModalType('login');
+                   }}
+                   onRegisterOpen={() => {
+                       window.scrollTo({ top: 0, behavior: 'smooth' });
+                       setModalType('register');
+                   }}
                 />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
@@ -38,10 +47,23 @@ function App() {
                     <Route path="/shelters" element={<SheltersPage />} />
                     <Route path="/shelters/:id" element={<ShelterDetailPage />} />
                     <Route path="/dashboard/shelter" element={<DashboardShelter />} />
-
                 </Routes>
                 <Modal isOpen={modalType !== null} onClose={closeModal}>
-                  {modalType === 'login' ? <LoginForm /> : <RegisterForm />}
+                    {modalType === 'login' && (
+                        <LoginForm
+                            switchToReset={() => setModalType('reset')}
+                            switchToClose={closeModal}
+                            switchToRegister={() => setModalType('register')}
+                        />
+                    )}
+
+                    {modalType === 'register' && (
+                        <RegisterForm switchToLogin={() => setModalType('login')} />
+                    )}
+
+                    {modalType === 'reset' && (
+                        <ResetPasswordForm switchToLogin={() => setModalType('login')} />
+                    )}
                 </Modal>
                 <Footer></Footer>
             </Layout>

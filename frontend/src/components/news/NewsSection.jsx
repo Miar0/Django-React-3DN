@@ -76,7 +76,7 @@ const NewsSection = () => {
                 <Link to="/news" className="group">
                     <button className="flex items-center gap-2 px-8 py-3 rounded-full border border-[--color-news-accent] text-[--color-news-accent]
                     bg-white shadow-md transition hover:bg-[#ECEBFF] hover:scale-105 active:scale-95 focus-visible:ring-2
-                    dark:border-white dark:text-white dark:bg-transparent dark:hover:bg-white/10">
+                    dark:border-white dark:text-white dark:bg-transparent dark:hover:bg-white/10 cursor-pointer">
                         Дізнатись більше
                         <span className="transition-transform duration-300 group-hover:translate-x-1">➜</span>
                     </button>
