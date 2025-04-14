@@ -1,1 +1,114 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme {
+    /* === Breakpoints === */
+    /*--breakpoint-*: initial;*/
+    /*--breakpoint-sm: 480px;*/
+    /*--breakpoint-md: 768px;*/
+    /*--breakpoint-lg: 976px;*/
+    /*--breakpoint-xl: 1024px;*/
+
+    /* === Custom Colors === */
+    --color-nav-btn: #2E256F;
+    --color-header-dark: #202F69;
+    --color-nav-dark: #FFFFFF;
+    --color-dark-fond: #080B2A;
+
+    --color-news-accent: #3F3D9C;
+    --color-news-bg-light: #F6F9FC;
+    --color-news-hover-light: #F0F0FF;
+    --color-news-gradient-dark: linear-gradient(to right, rgba(0,0,0,0.3), rgba(102,102,102,0.3));
+
+    /* === Animations === */
+    --animate-fade-in-up: fade-in-up 0.5s ease-out;
+    --animate-fade-in-scale: fade-in-scale 0.4s ease-out;
+
+    @keyframes fade-in-up {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fade-in-scale {
+        0% {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+
+
+@layer utilities {
+    /*COLORS LIGHT-MODE*/
+    .register-btn {
+        background: linear-gradient(90deg, #1235C7, #0E2897, #0C227F, #0C2488, #091A61);
+    }
+
+    .primary-btn {
+        background: linear-gradient(to right, #202857, #4658BD);
+    }
+
+    .primary-text {
+        background: linear-gradient(to right, #202857, #4658BD);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .custom-shadow {
+        box-shadow:
+                0px 5px 10px rgba(0, 0, 0, 0.10),
+                0px 19px 19px rgba(0, 0, 0, 0.09),
+                0px 43px 26px rgba(0, 0, 0, 0.05),
+                0px 76px 30px rgba(0, 0, 0, 0.01),
+                0px 118px 33px rgba(0, 0, 0, 0.00);
+    }
+
+    .animate-fade-in {
+        @apply opacity-0;
+        animation: fadeIn 0.4s ease-in-out forwards;
+    }
+
+    .animate-fade-in {
+        @apply opacity-0;
+        animation: fadeIn 0.4s ease-in-out forwards;
+    }
+
+
+
+    /*.dark-gradient {*/
+    /*    background: linear-gradient(135deg, #8BBD8E 0%, #FFFFFF 50%, #999999 100%);*/
+    /*    -webkit-background-clip: text;*/
+    /*    -webkit-text-fill-color: transparent;*/
+    /*}*/
+
+    /*COLOR DARK_MODE*/
+
+
+
+    /* SHADOW   */
+    /*.login-shadow {*/
+    /*    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1),*/
+    /*    8px 9px 12px rgba(0, 0, 0, 0.09),*/
+    /*    19px 20px 16px rgba(0, 0, 0, 0.05),*/
+    /*    34px 35px 20px rgba(0, 0, 0, 0.01),*/
+    /*    53px 55px 21px rgba(0, 0, 0, 0);*/
+    /*}*/
+}
