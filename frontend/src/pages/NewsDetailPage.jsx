@@ -17,8 +17,15 @@ const NewsDetailPage = () => {
 
     return (
         <div className="min-h-screen bg-[#EDF2F7] dark:bg-dark-fond text-[#1B1B1B] dark:text-white mt-2 px-6 py-10 max-w-[1440px] mx-auto">
-            <Link to="/news" className="text-blue-600 dark:text-blue-400 underline mb-6 block">
-                ← Повернутися до новин
+            <Link
+                to="/news"
+                className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium
+                hover:text-blue-800 dark:hover:text-blue-300 transition-all ease-in-out cursor-pointer mb-4"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Повернутися до оголошень
             </Link>
 
             <div className="bg-white dark:bg-[#1C1C2E] p-6 rounded-2xl shadow-md">

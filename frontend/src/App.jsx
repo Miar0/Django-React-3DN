@@ -11,14 +11,15 @@ import CreateAnnouncementPage from './pages/CreateAnnouncementPage'
 import SheltersPage from './pages/SheltersPage'
 import ShelterDetailPage from './pages/ShelterDetailPage'
 import AnimalDetailPage from "./pages/AnimalDetailPage"
-import NewsDetailPage from './pages/NewsDetailPage';
-import NewsListPage from './pages/NewsListPage';
+import NewsDetailPage from './pages/NewsDetailPage'
+import NewsListPage from './pages/NewsListPage'
 import DashboardShelter from './pages/DashboardShelter';
 import Footer from './components/Footer'
-import ResetPasswordForm from "./components/ResetPasswordForm";
+import ResetPasswordForm from './components/ResetPasswordForm'
 import useDisableScroll from './hooks/useDisableScroll'
 import ReviewsPage from './pages/ReviewsShelter'
-import CreateReviewsShelter from "./pages/CreateReviewsShelter";
+import CreateReviewsShelter from './pages/CreateReviewsShelter'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
     const [modalType, setModalType] = useState(null)
@@ -28,6 +29,7 @@ function App() {
 
     return (
         <Router>
+            <ScrollToTop />
             <Layout>
                <Header
                    onLoginOpen={() => {

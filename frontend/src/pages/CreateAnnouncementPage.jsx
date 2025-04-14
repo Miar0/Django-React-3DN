@@ -76,14 +76,18 @@ const CreateAnnouncementPage = () => {
 
     return (
         <div className="min-h-screen bg-[#F8FAF9] dark:bg-dark-fond py-10 px-4 md:px-12">
-            {/* Назад */}
             <div className="max-w-3xl mx-auto mb-4">
                 <button
                     type="button"
                     onClick={() => navigate(-1)}
-                    className="text-[#2563EB] dark:text-blue-400 underline text-sm cursor-pointer"
+                    className="flex items-center gap-2 text-[#2563EB] dark:text-blue-400 font-medium
+                    hover:text-[#1D4ED8] dark:hover:text-blue-500 transition-all ease-in-out cursor-pointer"
                 >
-                    ← Повернутися назад
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                    Повернутися назад
                 </button>
             </div>
 
@@ -95,7 +99,6 @@ const CreateAnnouncementPage = () => {
                 onSubmit={handleSubmit}
                 className="max-w-3xl mx-auto bg-white dark:bg-[#1C1C2E] p-6 rounded-3xl shadow-md space-y-6"
             >
-                {/* Фото */}
                 <div>
                     <label className="block mb-1 font-medium dark:text-white">Фото тваринки *</label>
                     <input
@@ -257,7 +260,7 @@ const CreateAnnouncementPage = () => {
                 <div className="text-center">
                     <button
                         type="submit"
-                        className="bg-[#2563EB] text-white py-2 px-6 rounded-full hover:bg-[#1E40AF] transition"
+                        className="bg-[#2563EB] text-white py-2 px-6 rounded-full hover:bg-[#1E40AF] transition cursor-pointer"
                     >
                         Створити оголошення
                     </button>

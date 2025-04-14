@@ -1,6 +1,5 @@
 import React from 'react';
 import pets from '../assets/images/pets.png'
-// import petsCard from '../components/carousel/PetCard.jsx';
 import greenEllipse from '../assets/icons/green-ellipse.svg';
 import blueEllipse from '../assets/icons/blue-ellipse.svg';
 import rightBlueEllipse from '../assets/icons/right-blue-ellipse.svg';
@@ -8,7 +7,7 @@ import Carousel from '../components/carousel/Carousel';
 import WhyUsSection from '../components/WhyUsSection';
 import ReviewSection from '../components/reviews/ReviewSection';
 import NewsSection from '../components/news/NewsSection';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 const HomePage = () => {
@@ -40,10 +39,8 @@ const HomePage = () => {
                 />
                 <div
                     className="max-w-[1440px] w-full  flex flex-col lg:flex-row items-center justify-between ">
-                    {/* Left Content Text+Buttons*/}
                     <div
                         className="flex-1 flex flex-col pl-26 justify-center items-start text-left pb-18 z-10">
-                        {/*Head Text*/}
                         <div className='flex flex-col mb-38 '>
                             <h1 className="text-[60px] whitespace-nowrap font-extrabold leading-tight tracking-[0.8px] bg-[linear-gradient(to_right,#202857,#4658BD)]
                         dark:bg-[linear-gradient(135deg,_#8BBD8E_20%,_#FFFFFF_99%)] bg-clip-text text-transparent
@@ -57,11 +54,12 @@ const HomePage = () => {
                             </p>
                         </div>
 
-                        {/* Buttons */}
                         <div className="flex gap-9 mt-8">
                             <Link to={'/announcements'}>
                                 <button
-                                    className="cursor-pointer w-[250px] h-[50px] rounded-full shadow-[0_4px_20px_rgba(104,109,224,0.5)] primary-btn text-[#FFFFFF] dark:text-[#FFFFFF]"
+                                    className="cursor-pointer w-[250px] h-[50px] rounded-full
+                                    shadow-[0_4px_20px_rgba(104,109,224,0.5)] primary-btn text-[#FFFFFF]
+                                    dark:text-[#FFFFFF]"
                                 >
                                     Обрати улюбленця
                                 </button>
@@ -78,7 +76,6 @@ const HomePage = () => {
                         </div>
                     </div>
 
-                    {/* Right Image */}
                     <div className="flex-1 flex justify-center items-center">
                         <img
                             src={pets}
@@ -88,10 +85,10 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
-            <Carousel />
-            <WhyUsSection />
-            <ReviewSection />
-            <NewsSection />
+            <Carousel/>
+            <WhyUsSection/>
+            <ReviewSection/>
+            <NewsSection/>
         </>
     );
 };
