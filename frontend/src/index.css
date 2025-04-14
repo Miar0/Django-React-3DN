@@ -1,16 +1,14 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-@import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
     /* === Breakpoints === */
-    --breakpoint-*: initial;
-    --breakpoint-sm: 480px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 976px;
-    --breakpoint-xl: 1024px;
+    /*--breakpoint-*: initial;*/
+    /*--breakpoint-sm: 480px;*/
+    /*--breakpoint-md: 768px;*/
+    /*--breakpoint-lg: 976px;*/
+    /*--breakpoint-xl: 1024px;*/
 
     /* === Custom Colors === */
     --color-nav-btn: #2E256F;
